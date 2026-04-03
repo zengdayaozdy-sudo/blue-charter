@@ -193,13 +193,13 @@ footer ul li a:hover{color:var(--gold)}
   <div class="footer-grid">
     <div><span class="footer-logo">藍教頭<em>包車旅遊</em></span><p>專業台灣包車旅遊服務，安全舒適，值得信賴。</p></div>
     <div><h4>快速連結</h4><ul><li><a href="02_關於我們.html">關於我們</a></li><li><a href="03_服務項目.html">服務項目</a></li><li><a href="04_精選行程.html">精選行程</a></li><li><a href="05_線上預約.html">線上預約</a></li></ul></div>
-    <div><h4>聯絡我們</h4><ul><li><a href="#">LINE：@blue-charter</a></li><li><a href="#">0900-000-000</a></li><li><a href="#">info@blue-charter.tw</a></li></ul></div>
+    <div><h4>聯絡我們</h4><ul><li><a href="#">LINE：@blue-charter</a></li><li><a href="#">0931-041-939</a></li><li><a href="#">zengdayaozdy@gmail.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">© 2026 藍教頭包車旅遊 · 版權所有</div>
 </footer>
 <a href="https://line.me/R/ti/p/@blue-charter" class="line-btn" target="_blank">LINE 諮詢</a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const cards = document.querySelectorAll('.tour-card')
 document.querySelectorAll('.filter-btn').forEach(btn=>{
   btn.addEventListener('click',function(){
@@ -208,13 +208,4 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     const f=this.dataset.filter
     let count=0
     cards.forEach(c=>{
-      const show=f==='all'||c.dataset.area===f||c.dataset.days===f
-      c.classList.toggle('hidden',!show)
-      if(show)count++
-    })
-    document.getElementById('resultsCount').textContent=`顯示 ${count} 條行程`
-  })
-})
-</script>
-</body>
-</html>
+      const show=f==='all'||c.dataset.area===f||c.dat
