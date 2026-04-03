@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精選行程 | 藍教頭包車旅遊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1A2E4A;--gold:#E8A020;--gold-lt:#F5C050;--cream:#F8F6F2;--txt:#1A1A1A;--muted:#6B7280;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--txt);background:var(--white)}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,46,74,.96);backdrop-filter:blur(8px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:68px;border-bottom:1px solid rgba(232,160,32,.2)}
+.logo{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:700;color:#fff;letter-spacing:.06em;text-decoration:none}
+.logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 26px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.08em}
+.page-hero{padding:148px 6% 80px;background:linear-gradient(160deg,#0a1929,#1A2E4A);text-align:center;position:relative}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(232,160,32,.3),transparent)}
+.page-label{font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.page-hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.3}
+
+/* FILTER */
+.filter-bar{background:var(--cream);padding:28px 6%;border-bottom:1px solid #e8e4dc;position:sticky;top:68px;z-index:50}
+.filter-inner{max-width:1080px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap}
+.filter-btn{background:#fff;color:var(--navy);border:1px solid #ddd;padding:8px 20px;border-radius:2px;font-size:12px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.06em;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* TOURS GRID */
+.tours-sec{padding:60px 6% 96px;background:#fff}
+.max{max-width:1080px;margin:0 auto}
+.tour-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.tour-card{background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .25s,box-shadow .25s;cursor:pointer}
+.tour-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,46,74,.1)}
+.tour-img{height:210px;position:relative;overflow:hidden}
+.tour-img-bg{width:100%;height:100%;transition:transform .4s}
+.tour-card:hover .tour-img-bg{transform:scale(1.04)}
+.tour-badges{position:absolute;top:16px;left:16px;display:flex;gap:6px}
+.badge-day{background:var(--gold);color:var(--navy);font-size:10px;padding:4px 12px;letter-spacing:.1em}
+.badge-area{background:rgba(26,46,74,.85);color:rgba(255,255,255,.85);font-size:10px;padding:4px 12px;letter-spacing:.06em}
+.tour-body{padding:28px}
+.tour-body h3{font-family:'Noto Serif TC',serif;font-size:18px;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.tour-body p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:20px}
+.tour-spots{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.spot-tag{background:var(--cream);color:var(--navy);font-size:11px;padding:3px 10px;border-radius:2px}
+.tour-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid #f0ede8}
+.tour-price{font-size:20px;color:var(--gold);font-weight:500;font-family:'Noto Serif TC',serif}
+.tour-price small{font-size:11px;color:var(--muted);font-weight:400}
+.btn-sm{background:transparent;color:var(--navy);border:1px solid var(--navy);padding:8px 18px;border-radius:2px;font-size:12px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.06em;transition:all .2s}
+.btn-sm:hover{background:var(--navy);color:#fff}
+
+/* CUSTOM CTA */
+.custom-cta{background:var(--cream);padding:60px 6%;margin-top:0}
+.custom-box{max-width:680px;margin:0 auto;text-align:center;padding:56px;border:1px solid #ddd9d0}
+.custom-box h2{font-family:'Noto Serif TC',serif;font-size:26px;color:var(--navy);margin-bottom:12px}
+.custom-box p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:32px}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 40px;border:none;border-radius:3px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.08em;transition:all .25s}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px)}
+
+footer{background:#0a1929;padding:64px 6% 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1080px;margin:0 auto 44px}
+.footer-logo{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:#fff;display:block;margin-bottom:14px}
+.footer-logo em{color:var(--gold);font-style:normal}
+footer p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.9}
+footer h4{color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.12em;margin-bottom:18px;font-weight:500}
+footer ul{list-style:none}
+footer ul li{margin-bottom:10px}
+footer ul li a{color:rgba(255,255,255,.38);text-decoration:none;font-size:13px;transition:color .2s}
+footer ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;text-align:center;font-size:11px;color:rgba(255,255,255,.25);max-width:1080px;margin:0 auto}
+.line-btn{position:fixed;bottom:28px;right:28px;background:#06C755;color:#fff;padding:11px 22px;border-radius:24px;font-size:13px;text-decoration:none;z-index:200;box-shadow:0 4px 16px rgba(6,199,85,.35);letter-spacing:.05em;transition:transform .2s}
+.line-btn:hover{transform:translateY(-2px)}
+.hidden{display:none}
+@media(max-width:768px){.nav-links{display:none}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">藍教頭<em>包車旅遊</em></a>
+  <ul class="nav-links">
+    <li><a href="/about">關於我們</a></li>
+    <li><a href="/services">服務項目</a></li>
+    <li><a href="/tours" class="active">精選行程</a></li>
+    <li><a href="/contact">聯絡我們</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='/booking'">立即預約</button>
+</nav>
+
+<section class="page-hero">
+  <p class="page-label">Featured Tours</p>
+  <h1>精選行程<br>發現台灣最美的樣子</h1>
+</section>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">全部行程</button>
+    <button class="filter-btn" data-filter="south">南台灣</button>
+    <button class="filter-btn" data-filter="central">中台灣</button>
+    <button class="filter-btn" data-filter="east">東台灣</button>
+    <button class="filter-btn" data-filter="north">北台灣</button>
+    <button class="filter-btn" data-filter="1day">一日遊</button>
+    <button class="filter-btn" data-filter="multi">多日遊</button>
+  </div>
+</div>
+
+<section class="tours-sec">
+  <div class="max">
+    <div class="tour-grid" id="tourGrid">
+
+      <div class="tour-card" data-area="south" data-days="1day" onclick="location.href='/tours/tainan-1day'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#1A2E4A,#2d4a6b);height:100%"></div><div class="tour-badges"><span class="badge-day">1 DAY</span><span class="badge-area">台南</span></div></div>
+        <div class="tour-body">
+          <h3>台南古都深度一日遊</h3>
+          <p>赤崁樓、安平古堡、神農街，漫遊府城四百年歷史文化。</p>
+          <div class="tour-spots"><span class="spot-tag">赤崁樓</span><span class="spot-tag">安平古堡</span><span class="spot-tag">神農街</span><span class="spot-tag">安平老街</span></div>
+          <div class="tour-foot"><div class="tour-price">$3,800 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-area="central" data-days="multi" onclick="location.href='/tours/alishan-2days'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#2d3a1e,#4a5e30);height:100%"></div><div class="tour-badges"><span class="badge-day">2 DAYS</span><span class="badge-area">嘉義</span></div></div>
+        <div class="tour-body">
+          <h3>阿里山日出雲海兩日遊</h3>
+          <p>神木群、小火車、日出雲海，高山秘境全包辦。</p>
+          <div class="tour-spots"><span class="spot-tag">阿里山</span><span class="spot-tag">神木群</span><span class="spot-tag">小火車</span><span class="spot-tag">日出</span></div>
+          <div class="tour-foot"><div class="tour-price">$8,500 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-area="south" data-days="1day" onclick="location.href='/tours/kenting-1day'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#1e2d3a,#2a4a5e);height:100%"></div><div class="tour-badges"><span class="badge-day">1 DAY</span><span class="badge-area">屏東</span></div></div>
+        <div class="tour-body">
+          <h3>墾丁海岸風光一日遊</h3>
+          <p>國家公園、貓鼻頭、龍磐草原，南台灣蔚藍海岸線。</p>
+          <div class="tour-spots"><span class="spot-tag">墾丁</span><span class="spot-tag">貓鼻頭</span><span class="spot-tag">龍磐草原</span></div>
+          <div class="tour-foot"><div class="tour-price">$4,200 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-area="east" data-days="multi" onclick="location.href='/tours/taroko-2days'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#1a2e2a,#2a4e46);height:100%"></div><div class="tour-badges"><span class="badge-day">2 DAYS</span><span class="badge-area">花蓮</span></div></div>
+        <div class="tour-body">
+          <h3>太魯閣峽谷花東縱谷兩日遊</h3>
+          <p>太魯閣國家公園、清水斷崖、花東縱谷田野風光。</p>
+          <div class="tour-spots"><span class="spot-tag">太魯閣</span><span class="spot-tag">清水斷崖</span><span class="spot-tag">花東縱谷</span></div>
+          <div class="tour-foot"><div class="tour-price">$9,200 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-area="south" data-days="1day" onclick="location.href='/tours/kaohsiung-1day'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#2a1a3a,#3d2a5e);height:100%"></div><div class="tour-badges"><span class="badge-day">1 DAY</span><span class="badge-area">高雄</span></div></div>
+        <div class="tour-body">
+          <h3>高雄港都藝術一日遊</h3>
+          <p>駁二藝術特區、愛河、旗津渡輪，感受港都獨特魅力。</p>
+          <div class="tour-spots"><span class="spot-tag">駁二</span><span class="spot-tag">愛河</span><span class="spot-tag">旗津</span><span class="spot-tag">左營蓮池潭</span></div>
+          <div class="tour-foot"><div class="tour-price">$3,600 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+      <div class="tour-card" data-area="north" data-days="1day" onclick="location.href='/tours/jiufen-1day'">
+        <div class="tour-img"><div class="tour-img-bg" style="background:linear-gradient(135deg,#2a1e14,#4a3628);height:100%"></div><div class="tour-badges"><span class="badge-day">1 DAY</span><span class="badge-area">新北</span></div></div>
+        <div class="tour-body">
+          <h3>九份金瓜石懷舊一日遊</h3>
+          <p>九份老街、金瓜石黃金博物館、深澳漁港，北台灣山海秘境。</p>
+          <div class="tour-spots"><span class="spot-tag">九份</span><span class="spot-tag">金瓜石</span><span class="spot-tag">深澳漁港</span></div>
+          <div class="tour-foot"><div class="tour-price">$4,500 <small>起 / 台</small></div><button class="btn-sm">查看詳情</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="custom-cta">
+  <div class="custom-box">
+    <h2>找不到理想行程？</h2>
+    <p>告訴我們您的出發日期、人數與想去的地方，我們幫您客製化規劃專屬行程，完全依照您的步調安排。</p>
+    <button class="btn-gold" onclick="location.href='/booking'">客製行程諮詢</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><span class="footer-logo">藍教頭<em>包車旅遊</em></span><p>專業台灣包車旅遊服務，安全舒適，值得信賴。</p></div>
+    <div><h4>快速連結</h4><ul><li><a href="/about">關於我們</a></li><li><a href="/services">服務項目</a></li><li><a href="/tours">精選行程</a></li><li><a href="/booking">線上預約</a></li></ul></div>
+    <div><h4>聯絡我們</h4><ul><li><a href="#">LINE：@blue-charter</a></li><li><a href="#">電話：0900-000-000</a></li><li><a href="#">Email：info@blue-charter.tw</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 藍教頭包車旅遊 · 版權所有</div>
+</footer>
+<a href="https://line.me/R/ti/p/@blue-charter" class="line-btn" target="_blank">LINE 諮詢</a>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'))
+    this.classList.add('active')
+    const filter=this.dataset.filter
+    document.querySelectorAll('.tour-card').forEach(card=>{
+      if(filter==='all'||card.dataset.area===filter||card.dataset.days===filter){
+        card.classList.remove('hidden')
+      }else{
+        card.classList.add('hidden')
+      }
+    })
+  })
+})
+</script>
+</body>
+</html>

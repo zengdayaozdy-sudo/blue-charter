@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務項目 | 藍教頭包車旅遊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1A2E4A;--gold:#E8A020;--gold-lt:#F5C050;--cream:#F8F6F2;--txt:#1A1A1A;--muted:#6B7280;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;color:var(--txt);background:var(--white)}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,46,74,.96);backdrop-filter:blur(8px);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:68px;border-bottom:1px solid rgba(232,160,32,.2)}
+.logo{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:700;color:#fff;letter-spacing:.06em;text-decoration:none}
+.logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 26px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.08em}
+.page-hero{padding:148px 6% 80px;background:linear-gradient(160deg,#0a1929,#1A2E4A);text-align:center;position:relative}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(232,160,32,.3),transparent)}
+.page-label{font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.page-hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(32px,4.5vw,52px);font-weight:700;color:#fff;line-height:1.3}
+.sec{padding:96px 6%}
+.max{max-width:1080px;margin:0 auto}
+.sec-label{text-align:center;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-family:'Noto Serif TC',serif;font-size:clamp(26px,3.5vw,38px);font-weight:600;text-align:center;color:var(--navy);line-height:1.4;margin-bottom:56px}
+
+/* SERVICE CARDS */
+.svc-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border:1px solid #e8e4dc}
+.svc-item{padding:52px 40px;border-right:1px solid #e8e4dc;border-bottom:1px solid #e8e4dc;position:relative;transition:background .25s;cursor:pointer}
+.svc-item:hover{background:var(--cream)}
+.svc-item:hover .svc-more{color:var(--gold)}
+.svc-num{font-size:11px;color:var(--gold);letter-spacing:.2em;margin-bottom:20px;display:block}
+.svc-item h2{font-family:'Noto Serif TC',serif;font-size:22px;color:var(--navy);margin-bottom:14px;font-weight:600}
+.svc-item p{font-size:13px;color:var(--muted);line-height:1.95;margin-bottom:24px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tag{background:var(--navy);color:rgba(255,255,255,.7);font-size:11px;padding:4px 12px;border-radius:2px;letter-spacing:.06em}
+.svc-more{font-size:13px;color:var(--navy);letter-spacing:.06em;transition:color .2s}
+
+/* VEHICLES */
+.vehicles{background:var(--cream)}
+.veh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.veh-card{background:#fff;overflow:hidden}
+.veh-img{height:160px;background:linear-gradient(135deg,#1A2E4A,#243d5e);display:flex;align-items:flex-end;padding:16px}
+.veh-badge{background:var(--gold);color:var(--navy);font-size:10px;padding:3px 10px;letter-spacing:.1em}
+.veh-body{padding:24px}
+.veh-body h3{font-family:'Noto Serif TC',serif;font-size:17px;color:var(--navy);margin-bottom:8px}
+.veh-body p{font-size:12px;color:var(--muted);line-height:1.85}
+.veh-spec{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid #f0ede8}
+.veh-spec span{font-size:11px;color:var(--gold);letter-spacing:.06em}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px}
+.price-card{background:var(--navy);padding:48px 36px;text-align:center;position:relative}
+.price-card.featured{background:#243d5e}
+.price-card.featured::before{content:'推薦';position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:10px;padding:4px 20px;letter-spacing:.1em}
+.price-card h3{font-family:'Noto Serif TC',serif;font-size:18px;color:#fff;margin-bottom:8px}
+.price-card .desc{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:28px;line-height:1.8}
+.price-num{font-size:36px;color:var(--gold);font-weight:700;font-family:'Noto Serif TC',serif;line-height:1}
+.price-unit{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;margin-bottom:28px}
+.price-list{list-style:none;text-align:left}
+.price-list li{font-size:12px;color:rgba(255,255,255,.55);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.6}
+.price-list li::before{content:'✓  ';color:var(--gold)}
+.btn-gold{display:block;margin-top:28px;background:var(--gold);color:var(--navy);padding:12px;border:none;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.08em;width:100%;transition:background .2s}
+.btn-gold:hover{background:var(--gold-lt)}
+
+/* FAQ */
+.faq-bg{background:var(--cream)}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e0ddd8;padding:24px 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center}
+.faq-q h3{font-family:'Noto Serif TC',serif;font-size:16px;color:var(--navy);font-weight:600}
+.faq-toggle{color:var(--gold);font-size:20px;transition:transform .25s;flex-shrink:0;margin-left:16px}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.95;margin-top:14px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+
+.cta-banner{background:var(--navy);padding:80px 6%;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(232,160,32,.07) 0%,transparent 70%)}
+.cta-banner h2{font-family:'Noto Serif TC',serif;font-size:clamp(26px,3.5vw,38px);color:#fff;margin-bottom:14px;position:relative}
+.cta-banner p{color:rgba(255,255,255,.48);font-size:14px;margin-bottom:36px;position:relative}
+footer{background:#0a1929;padding:64px 6% 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;max-width:1080px;margin:0 auto 44px}
+.footer-logo{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:#fff;display:block;margin-bottom:14px}
+.footer-logo em{color:var(--gold);font-style:normal}
+footer p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.9}
+footer h4{color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.12em;margin-bottom:18px;font-weight:500}
+footer ul{list-style:none}
+footer ul li{margin-bottom:10px}
+footer ul li a{color:rgba(255,255,255,.38);text-decoration:none;font-size:13px;transition:color .2s}
+footer ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;text-align:center;font-size:11px;color:rgba(255,255,255,.25);max-width:1080px;margin:0 auto}
+.line-btn{position:fixed;bottom:28px;right:28px;background:#06C755;color:#fff;padding:11px 22px;border-radius:24px;font-size:13px;text-decoration:none;z-index:200;box-shadow:0 4px 16px rgba(6,199,85,.35);letter-spacing:.05em;transition:transform .2s}
+.line-btn:hover{transform:translateY(-2px)}
+@media(max-width:768px){.nav-links{display:none}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">藍教頭<em>包車旅遊</em></a>
+  <ul class="nav-links">
+    <li><a href="/about">關於我們</a></li>
+    <li><a href="/services" class="active">服務項目</a></li>
+    <li><a href="/tours">精選行程</a></li>
+    <li><a href="/contact">聯絡我們</a></li>
+  </ul>
+  <button class="nav-cta" onclick="location.href='/booking'">立即預約</button>
+</nav>
+
+<section class="page-hero">
+  <p class="page-label">Our Services</p>
+  <h1>量身打造<br>每一段專屬旅程</h1>
+</section>
+
+<section class="sec">
+  <div class="max">
+    <p class="sec-label">Service Types</p>
+    <h2 class="sec-title">服務類型</h2>
+    <div class="svc-main">
+      <div class="svc-item" onclick="location.href='/booking'">
+        <span class="svc-num">01</span>
+        <h2>散客旅遊包車</h2>
+        <p>個人、情侶、家庭自由行，依照您的節奏安排景點，想停多久就停多久，完全不受限制。</p>
+        <div class="svc-tags"><span class="tag">半日</span><span class="tag">一日</span><span class="tag">多日</span><span class="tag">客製路線</span></div>
+        <span class="svc-more">立即預約 →</span>
+      </div>
+      <div class="svc-item" onclick="location.href='/booking'">
+        <span class="svc-num">02</span>
+        <h2>企業商務接送</h2>
+        <p>機場接送、會議接駁、客戶接待、員工旅遊，提供準時可靠的商務級服務，讓您專注在重要事務上。</p>
+        <div class="svc-tags"><span class="tag">機場接送</span><span class="tag">會議接駁</span><span class="tag">客戶接待</span></div>
+        <span class="svc-more">立即預約 →</span>
+      </div>
+      <div class="svc-item" onclick="location.href='/booking'">
+        <span class="svc-num">03</span>
+        <h2>家庭長輩出遊</h2>
+        <p>帶著爸媽、長輩出遊，我們提供更貼心的照料服務，車門到車門，全程陪伴，讓長輩安心享受旅程。</p>
+        <div class="svc-tags"><span class="tag">三代同堂</span><span class="tag">輪椅友善</span><span class="tag">行程緩慢</span></div>
+        <span class="svc-more">立即預約 →</span>
+      </div>
+      <div class="svc-item" onclick="location.href='/booking'">
+        <span class="svc-num">04</span>
+        <h2>團體套裝行程</h2>
+        <p>公司尾牙、同學會、社團出遊，多人共乘方案更優惠，搭配精選行程，一次安排到位。</p>
+        <div class="svc-tags"><span class="tag">8人以上</span><span class="tag">套裝優惠</span><span class="tag">餐廳代訂</span></div>
+        <span class="svc-more">立即預約 →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec vehicles">
+  <div class="max">
+    <p class="sec-label">Fleet</p>
+    <h2 class="sec-title">可用車型</h2>
+    <div class="veh-grid">
+      <div class="veh-card"><div class="veh-img"><span class="veh-badge">1–4 人</span></div><div class="veh-body"><h3>豪華轎車</h3><p>Toyota Camry 或同級車，適合個人商務或小家庭出遊，舒適寬敞。</p><div class="veh-spec"><span>4座</span><span>大型後車廂</span><span>冷氣/WiFi</span></div></div></div>
+      <div class="veh-card"><div class="veh-img" style="background:linear-gradient(135deg,#2d3a1e,#4a5e30)"><span class="veh-badge">1–7 人</span></div><div class="veh-body"><h3>商務 MPV</h3><p>Toyota Alphard 或同級車，寬敞車廂，適合家庭或小型商務接送。</p><div class="veh-spec"><span>7座</span><span>獨立座椅</span><span>冷氣/WiFi</span></div></div></div>
+      <div class="veh-card"><div class="veh-img" style="background:linear-gradient(135deg,#1e2d3a,#2a3d4e)"><span class="veh-badge">8–14 人</span></div><div class="veh-body"><h3>小型巴士</h3><p>Hiace 或同級廂型車，適合小型團體出遊，行李空間充裕。</p><div class="veh-spec"><span>12座</span><span>大行李廂</span><span>冷氣</span></div></div></div>
+      <div class="veh-card"><div class="veh-img" style="background:linear-gradient(135deg,#2d1e1e,#4e2a2a)"><span class="veh-badge">15+ 人</span></div><div class="veh-body"><h3>大型遊覽車</h3><p>適合大型團體，可安排合作遊覽車，請來電詢問。</p><div class="veh-spec"><span>45座</span><span>麥克風</span><span>冷氣/USB</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:#fff">
+  <div class="max">
+    <p class="sec-label">Pricing</p>
+    <h2 class="sec-title">參考報價</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>半日包車</h3>
+        <p class="desc">4 小時內<br>適合單一景點深度遊</p>
+        <div class="price-num">3,500</div>
+        <div class="price-unit">元起 / 台（轎車）</div>
+        <ul class="price-list">
+          <li>4小時服務時間</li>
+          <li>油費含在內</li>
+          <li>基本停車費含</li>
+          <li>路線自行規劃</li>
+        </ul>
+        <button class="btn-gold" onclick="location.href='/booking'">立即預約</button>
+      </div>
+      <div class="price-card featured">
+        <h3>全日包車</h3>
+        <p class="desc">8–10 小時<br>多景點深度行程</p>
+        <div class="price-num">6,500</div>
+        <div class="price-unit">元起 / 台（轎車）</div>
+        <ul class="price-list">
+          <li>10小時服務時間</li>
+          <li>油費含在內</li>
+          <li>基本停車費含</li>
+          <li>行程規劃諮詢</li>
+          <li>司機午餐補貼</li>
+        </ul>
+        <button class="btn-gold" onclick="location.href='/booking'">立即預約</button>
+      </div>
+      <div class="price-card">
+        <h3>多日包車</h3>
+        <p class="desc">2天以上<br>深度台灣探索</p>
+        <div class="price-num">12,000</div>
+        <div class="price-unit">元起 / 台 / 2天</div>
+        <ul class="price-list">
+          <li>每日10小時服務</li>
+          <li>油費含在內</li>
+          <li>基本停車費含</li>
+          <li>全程行程規劃</li>
+          <li>飯店推薦服務</li>
+        </ul>
+        <button class="btn-gold" onclick="location.href='/booking'">立即預約</button>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:24px">以上為轎車參考價格，MPV／巴士另計。實際報價依路線、季節、車型而定，請洽詢確認。</p>
+  </div>
+</section>
+
+<section class="sec faq-bg">
+  <div class="max">
+    <p class="sec-label">FAQ</p>
+    <h2 class="sec-title">常見問題</h2>
+    <div class="faq-list">
+      <div class="faq-item open"><div class="faq-q"><h3>如何計算包車費用？</h3><span class="faq-toggle">+</span></div><p class="faq-a">包車費用以台計費，依據服務時數、車型與路線距離報價。基本包含油費與基本停車費，高速公路過路費另計。建議填寫預約表單或直接 LINE 聯繫，我們會依您的需求提供精確報價。</p></div>
+      <div class="faq-item"><div class="faq-q"><h3>可以臨時更改行程嗎？</h3><span class="faq-toggle">+</span></div><p class="faq-a">出發前可以調整景點順序或增減停留點，我們會盡量配合。若需大幅更改路線或增加服務時數，可能需要補差額，司機會事先告知。</p></div>
+      <div class="faq-item"><div class="faq-q"><h3>需要提前多久預約？</h3><span class="faq-toggle">+</span></div><p class="faq-a">建議至少提前 3 天預約以確保車輛供應。旺季（春節、暑假、連假）建議提前 1–2 週。緊急需求可先 LINE 詢問，我們會確認當日是否有排班空檔。</p></div>
+      <div class="faq-item"><div class="faq-q"><h3>取消預約有什麼規定？</h3><span class="faq-toggle">+</span></div><p class="faq-a">出發前 7 天以上取消：全額退費。出發前 3–7 天取消：退費 50%。出發前 3 天內取消：不退費。天災或不可抗力因素另行協商。</p></div>
+      <div class="faq-item"><div class="faq-q"><h3>可以協助訂餐廳或門票嗎？</h3><span class="faq-toggle">+</span></div><p class="faq-a">可以！我們熟悉各地推薦餐廳與景點，多日行程可協助預訂熱門餐廳與部分景點門票，讓您的行程更順暢。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2>不確定要選哪個方案？</h2>
+  <p>直接告訴我們您的需求，我們幫您量身規劃</p>
+  <button style="background:var(--gold);color:var(--navy);padding:14px 40px;border:none;border-radius:3px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Noto Sans TC',sans-serif;letter-spacing:.08em" onclick="location.href='/contact'">免費諮詢</button>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><span class="footer-logo">藍教頭<em>包車旅遊</em></span><p>專業台灣包車旅遊服務，安全舒適，值得信賴。</p></div>
+    <div><h4>快速連結</h4><ul><li><a href="/about">關於我們</a></li><li><a href="/services">服務項目</a></li><li><a href="/tours">精選行程</a></li><li><a href="/booking">線上預約</a></li></ul></div>
+    <div><h4>聯絡我們</h4><ul><li><a href="#">LINE：@blue-charter</a></li><li><a href="#">電話：0900-000-000</a></li><li><a href="#">Email：info@blue-charter.tw</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 藍教頭包車旅遊 · 版權所有</div>
+</footer>
+<a href="https://line.me/R/ti/p/@blue-charter" class="line-btn" target="_blank">LINE 諮詢</a>
+<script>
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    item.classList.toggle('open')
+  })
+})
+</script>
+</body>
+</html>
