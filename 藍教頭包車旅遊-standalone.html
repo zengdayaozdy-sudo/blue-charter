@@ -1494,7 +1494,7 @@
       body {
         display:flex;
         flex-direction:column;
-        padding-bottom:88px;
+        padding-bottom:96px;
         background:#F7F4EA;
       }
       body > svg { order:0; }
@@ -1609,28 +1609,33 @@
         min-height:100svh;
         height:auto;
         padding-top:64px;
-        align-items:flex-end;
+        display:block;
+        align-items:initial;
         overflow:hidden;
-        background:#17384C;
+        background:linear-gradient(180deg,#17384C 0%,#23516E 100%);
       }
       .hero-image {
+        position:absolute;
+        top:64px;
+        left:0;
         width:100%;
-        height:100%;
+        height:min(36svh,292px);
         object-fit:cover;
-        object-position:68% center;
-        filter:saturate(.96) contrast(.98) brightness(.92);
+        object-position:64% 50%;
+        filter:saturate(.96) contrast(.98) brightness(.9);
       }
       #hero::before {
         z-index:1;
         background:
-          linear-gradient(180deg,rgba(23,56,76,.16) 0%,rgba(23,56,76,.34) 42%,rgba(23,56,76,.86) 100%),
-          linear-gradient(90deg,rgba(23,56,76,.68) 0%,rgba(23,56,76,.26) 62%,rgba(23,56,76,.06) 100%);
+          linear-gradient(180deg,rgba(23,56,76,0) 64px,rgba(23,56,76,.08) 26%,rgba(23,56,76,.18) 44%,#17384C 54%,#17384C 100%);
       }
       #hero::after { display:none; }
       .hero-content {
+        position:relative;
+        z-index:2;
         min-height:calc(100svh - 64px);
-        justify-content:flex-end;
-        padding:128px 20px 38px!important;
+        justify-content:flex-start;
+        padding:calc(min(36svh,292px) + 24px) 20px 28px!important;
       }
       .hero-brand-text { display:none; }
       .hero-eyebrow { display:flex; margin-bottom:14px; opacity:1; transform:none; animation:none; }
@@ -1642,10 +1647,10 @@
         text-transform:none;
       }
       .hero-headline {
-        max-width:340px;
-        margin-bottom:14px;
+        max-width:320px;
+        margin-bottom:12px;
         color:#fff;
-        font-size:clamp(34px,10.2vw,42px)!important;
+        font-size:clamp(32px,9.2vw,39px)!important;
         font-weight:650!important;
         line-height:1.12!important;
         letter-spacing:.018em!important;
@@ -1654,7 +1659,7 @@
       .hero-headline span:first-child { color:rgba(200,169,106,.95); }
       .hero-subline {
         max-width:330px;
-        margin:0 0 20px;
+        margin:0 0 18px;
         color:rgba(255,255,255,.82)!important;
         font-size:16px!important;
         line-height:1.65!important;
@@ -1663,8 +1668,8 @@
       .mobile-copy { display:inline!important; }
       .hero-buttons {
         display:grid!important;
-        grid-template-columns:1fr;
-        gap:10px;
+        grid-template-columns:1fr 1fr;
+        gap:9px;
         width:100%;
         max-width:350px;
         opacity:1;
@@ -1675,27 +1680,29 @@
       .hero-buttons .btn-primary,
       .hero-buttons .btn-outline-gold {
         width:100%;
-        min-height:52px;
+        min-height:50px;
         justify-content:center;
         border-radius:18px;
-        padding:0 18px;
-        font-size:16px!important;
+        padding:0 14px;
+        font-size:15px!important;
         font-weight:600!important;
       }
-      .hero-buttons .btn-outline-gold { display:none; }
-      .mobile-booking-flow { display:none!important; }
-      .hero-proof {
-        position:static;
-        display:flex!important;
-        flex-wrap:wrap;
-        grid-template-columns:none;
-        gap:8px;
-        max-width:350px;
-        margin-top:16px;
-        font-size:13px!important;
-        color:rgba(255,255,255,.72);
-        letter-spacing:.01em!important;
+      .hero-buttons .line-btn {
+        grid-column:1 / -1;
+        font-size:16px!important;
       }
+      .hero-buttons .btn-outline-gold {
+        display:flex!important;
+        color:#fff!important;
+        background:linear-gradient(135deg,#C8A96A 0%,#D98A32 100%)!important;
+        border-color:rgba(255,255,255,.18)!important;
+      }
+      .hero-buttons .btn-outline-gold svg {
+        color:#fff!important;
+        stroke:#fff!important;
+      }
+      .mobile-booking-flow { display:none!important; }
+      .hero-proof { display:none!important; }
       .hero-proof span {
         min-height:34px;
         padding:7px 10px;
@@ -1989,29 +1996,117 @@
         right:0;
         bottom:0;
         z-index:1300;
-        height:72px;
-        display:flex!important;
+        min-height:78px;
+        display:grid!important;
+        grid-template-columns:1.25fr 1fr .86fr;
+        gap:8px;
         align-items:center;
-        padding:10px 20px calc(10px + env(safe-area-inset-bottom));
+        padding:10px 12px calc(10px + env(safe-area-inset-bottom));
         background:rgba(247,244,234,.94);
         border-top:1px solid rgba(230,226,216,.9);
         box-shadow:0 -18px 40px rgba(35,81,110,.14);
         backdrop-filter:blur(16px);
       }
-      .mobile-bottom-bar .line-btn {
+      .mobile-bottom-bar a {
         width:100%;
         min-height:48px;
+        display:inline-flex;
+        align-items:center;
         justify-content:center;
-        border-radius:18px;
-        font-size:16px!important;
+        gap:6px;
+        border-radius:16px;
+        padding:0 8px;
+        text-decoration:none;
+        font-size:14px!important;
         font-weight:600!important;
+        line-height:1.15!important;
+        white-space:nowrap;
+      }
+      .mobile-bottom-bar svg {
+        width:18px;
+        height:18px;
+        flex:0 0 auto;
+      }
+      .mobile-bottom-bar .line-btn {
         box-shadow:0 12px 28px rgba(15,169,90,.22)!important;
+      }
+      .mobile-bottom-bar .whatsapp-btn {
+        color:#fff!important;
+        background:linear-gradient(135deg,#1EA768 0%,#12754B 100%)!important;
+        border:1px solid rgba(255,255,255,.16)!important;
+        box-shadow:0 12px 26px rgba(18,117,75,.18);
+      }
+      .mobile-bottom-bar .call-btn {
+        color:#17384C!important;
+        background:#fff!important;
+        border:1px solid rgba(35,81,110,.14)!important;
+        box-shadow:0 10px 24px rgba(35,81,110,.1);
+      }
+    }
+
+    @media(min-width:901px) {
+      #about,
+      #assurance,
+      #planning,
+      #quote,
+      #testimonials,
+      #contact {
+        padding-top:72px!important;
+        padding-bottom:72px!important;
+      }
+
+      #assurance {
+        min-height:auto!important;
+        display:block!important;
+        align-items:initial!important;
+      }
+
+      .about-grid,
+      .quote-grid,
+      .contact-grid {
+        gap:64px!important;
+      }
+
+      .assurance-grid,
+      .pricing-grid {
+        margin-top:40px!important;
+      }
+
+      .assurance-card {
+        min-height:220px!important;
+        padding:28px!important;
+      }
+
+      .planning-header,
+      .testimonials-header {
+        margin-bottom:42px!important;
+      }
+
+      .planning-cta-box {
+        margin-top:42px!important;
+        padding:36px 42px!important;
+      }
+
+      .pricing-notes {
+        margin-top:24px!important;
+        padding:28px 32px!important;
+      }
+
+      .contact-methods,
+      .contact-map {
+        margin-top:28px!important;
+      }
+
+      .hero-buttons .btn-outline-gold svg {
+        color:#fff!important;
+        stroke:#fff!important;
       }
     }
 
     @media(max-width:420px) {
-      .hero-content { padding-top:112px!important; padding-bottom:28px!important; }
-      .hero-headline { max-width:310px; font-size:clamp(34px,9.8vw,40px)!important; }
+      .hero-image { height:min(34svh,272px); object-position:66% 50%; }
+      .hero-content { padding-top:calc(min(34svh,272px) + 22px)!important; padding-bottom:24px!important; }
+      .hero-headline { max-width:300px; font-size:clamp(31px,8.8vw,36px)!important; }
       .hero-subline { max-width:300px; }
       .route-card { flex-basis:84vw; }
     }
@@ -2664,11 +2759,6 @@
         </ul>
         <p>網站不提供立即線上付款，也不放固定付款 QR Code；付款 QR Code、信用卡付款連結或其他指定付款連結會在客服確認後再提供。</p>
       </div>
-      <div class="pricing-cta">
-        <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn">
-          <svg aria-hidden="true"><use href="#ico-line"></use></svg>LINE 洽詢精確報價 @blue-charter
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -2964,7 +3054,15 @@
 <div class="mobile-bottom-bar" aria-label="手機固定詢問列">
   <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn">
     <svg aria-hidden="true"><use href="#ico-line"></use></svg>
-    LINE 詢問包車報價
+    官方 LINE
+  </a>
+  <a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="whatsapp-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.8 8.7c.2 3 2.2 5.1 5.2 5.8"></path></svg>
+    WhatsApp
+  </a>
+  <a href="tel:0935814087" class="call-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.91.33 1.8.62 2.65a2 2 0 0 1-.45 2.11L8 9.76a16 16 0 0 0 6.24 6.24l1.28-1.28a2 2 0 0 1 2.11-.45c.85.29 1.74.5 2.65.62A2 2 0 0 1 22 16.92Z"></path></svg>
+    撥打
   </a>
 </div>
 
