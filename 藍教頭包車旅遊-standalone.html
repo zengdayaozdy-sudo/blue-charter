@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>藍教頭包車旅遊｜宜蘭出發・走遍全台灣</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -7996,10 +7997,11 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0B1F3A; --gold: #C9A847; --cream: #F4EFE6; --body: #1A1A1A;
-      --mid-navy: #1A3A5C; --light-bg: #F4EFE6; --dark-footer: #060f1e;
-      --gold-30: rgba(201,168,71,.30); --gold-15: rgba(201,168,71,.15);
-      --cream-70: rgba(244,239,230,.70); --cream-50: rgba(244,239,230,.50); --cream-20: rgba(244,239,230,.20);
+      --navy:#23516E; --gold:#C8A96A; --cream:#F7F4EA; --body:#1E2326;
+      --mid-navy:#346C8C; --light-bg:#F7F4EA; --dark-footer:#17384C;
+      --accent-copper:#D98A32; --line-soft:#E6E2D8; --muted:#6F7477;
+      --gold-30:rgba(200,169,106,.30); --gold-15:rgba(200,169,106,.15);
+      --cream-70:rgba(247,244,234,.72); --cream-50:rgba(247,244,234,.50); --cream-20:rgba(247,244,234,.20);
     }
     html { scroll-behavior: smooth; }
     body { font-family:'Noto Sans TC',sans-serif; background:var(--navy); color:var(--body); overflow-x:hidden; }
@@ -8014,8 +8016,8 @@
     .section-sub-dark { font-family:'Noto Sans TC',sans-serif; font-weight:400; font-size:15px; color:var(--cream-70); line-height:1.8; max-width:560px; margin-top:16px; }
     .section-sub-light { font-family:'Noto Sans TC',sans-serif; font-weight:400; font-size:15px; color:rgba(26,26,26,.65); line-height:1.8; max-width:560px; margin-top:16px; }
 
-    .btn-primary { font-family:'Noto Sans TC',sans-serif; font-weight:600; font-size:15px; letter-spacing:.08em; color:var(--navy); background:var(--gold); border:2px solid var(--gold); padding:14px 36px; cursor:pointer; text-decoration:none; border-radius:2px; display:inline-block; transition:background .25s,transform .2s; }
-    .btn-primary:hover { background:#d9ba60; border-color:#d9ba60; transform:translateY(-1px); }
+    .btn-primary { font-family:'Noto Sans TC',sans-serif; font-weight:600; font-size:15px; letter-spacing:.08em; color:#fff; background:var(--gold); border:2px solid var(--gold); padding:14px 36px; cursor:pointer; text-decoration:none; border-radius:2px; display:inline-block; transition:background .25s,transform .2s; }
+    .btn-primary:hover { background:#B88F45; border-color:#B88F45; transform:translateY(-1px); }
     .btn-outline-gold { font-family:'Noto Sans TC',sans-serif; font-weight:500; font-size:15px; letter-spacing:.08em; color:var(--gold); background:transparent; border:2px solid var(--gold); padding:14px 36px; cursor:pointer; text-decoration:none; border-radius:2px; display:inline-flex; align-items:center; gap:8px; transition:background .25s,transform .2s; }
     .btn-outline-gold:hover { background:rgba(201,168,71,.1); transform:translateY(-1px); }
 
@@ -8023,8 +8025,8 @@
     .reveal.visible { opacity:1; transform:none; }
     .reveal-d1{transition-delay:.1s} .reveal-d2{transition-delay:.2s} .reveal-d3{transition-delay:.3s} .reveal-d4{transition-delay:.4s}
 
-    .line-btn { display:inline-flex; align-items:center; gap:10px; background:#06C755; color:#fff; font-family:'Noto Sans TC',sans-serif; font-weight:600; font-size:15px; letter-spacing:.06em; padding:14px 32px; border-radius:2px; text-decoration:none; transition:background .25s,transform .2s; border:none; cursor:pointer; }
-    .line-btn:hover { background:#05b34c; transform:translateY(-1px); }
+    .line-btn { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:#fff; font-family:'Noto Sans TC',sans-serif; font-weight:600; font-size:15px; letter-spacing:.06em; padding:14px 32px; border-radius:2px; text-decoration:none; transition:background .25s,transform .2s; border:none; cursor:pointer; }
+    .line-btn:hover { background:#B88F45; transform:translateY(-1px); }
     .line-btn svg { width:20px; height:20px; flex-shrink:0; }
 
     /* ── NAV ── */
@@ -8177,16 +8179,16 @@
     .route-help-panel a[href*="line.me"],
     .contact-method a[href*="line.me"],
     .planning-cta-box a[href*="line.me"] {
-      background:#06C755!important;
-      border-color:#06C755!important;
+      background:var(--gold)!important;
+      border-color:var(--gold)!important;
       color:#fff!important;
     }
     .line-btn:hover,
     .route-help-panel a[href*="line.me"]:hover,
     .contact-method a[href*="line.me"]:hover,
     .planning-cta-box a[href*="line.me"]:hover {
-      background:#05b34c!important;
-      border-color:#05b34c!important;
+      background:#B88F45!important;
+      border-color:#B88F45!important;
     }
     .btn-primary,
     .btn-outline-gold,
@@ -8244,7 +8246,7 @@
     .vehicle-feature { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--cream-70); }
     .vehicle-feature::before { content:''; width:4px; height:4px; background:var(--gold); border-radius:50%; flex-shrink:0; }
 
-    /* ── 行程規劃 ── */
+    /* ── 預約流程 ── */
     #planning { background:var(--light-bg); padding:100px 0; }
     .planning-header { text-align:center; margin-bottom:64px; }
     .planning-header .section-eyebrow { justify-content:center; }
@@ -8370,7 +8372,7 @@
     .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
     .footer-copyright { font-size:12px; color:rgba(244,239,230,.35); letter-spacing:.06em; }
     .footer-line-hint { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(244,239,230,.35); }
-    .footer-line-hint svg { width:14px; height:14px; color:#06C755; }
+    .footer-line-hint svg { width:14px; height:14px; color:#0FA95A; }
 
     /* ── RESPONSIVE ── */
     @media(max-width:1100px) {
@@ -8436,8 +8438,657 @@
       .hero-buttons .btn-primary,
       .hero-buttons .line-btn { width:auto; max-width:100%; }
       .hero-headline { font-size:clamp(38px,11vw,54px); max-width:92vw; }
+      .hero-headline span { white-space:normal; }
       .hero-subline { font-size:15px; line-height:1.8; letter-spacing:.03em; margin-bottom:32px; max-width:88vw; }
       .footer-top { grid-template-columns:1fr; }
+    }
+
+    /* ── MOCKUP-ALIGNED OVERRIDES: keep original content, adjust presentation ── */
+    :root {
+      --navy:#23516E;
+      --gold:#C8A96A;
+      --light-bg:#F7F4EA;
+      --dark-footer:#17384C;
+      --accent-copper:#D98A32;
+      --mid-navy:#346C8C;
+      --body:#1E2326;
+      --muted:#6F7477;
+      --line-soft:#E6E2D8;
+      --gold-30:rgba(200,169,106,.30);
+      --gold-15:rgba(200,169,106,.15);
+      --cream:#F7F4EA;
+      --cream-70:rgba(247,244,234,.72);
+    }
+    body { background:#F7F4EA; color:#1E2326; }
+    .inner { max-width:1380px; }
+    nav#main-nav {
+      height:72px;
+      padding:16px clamp(18px,3vw,48px) 0;
+      background:transparent;
+      backdrop-filter:none;
+      border-bottom:0;
+      justify-content:center;
+      pointer-events:none;
+    }
+    nav#main-nav.scrolled { background:transparent; box-shadow:none; }
+    .brand-lockup { display:flex; align-items:center; gap:10px; color:#fff; min-width:248px; }
+    .brand-mark { width:46px; height:46px; border:2px solid var(--gold); border-radius:50%; display:grid; place-items:center; background:rgba(200,169,106,.08); overflow:hidden; flex:0 0 auto; }
+    .brand-mark img { width:39px; height:39px; display:block; }
+    .brand-copy { display:flex; flex-direction:column; gap:2px; }
+    .brand-name { font-family:'Noto Serif TC',serif; color:#fff; font-size:19px; font-weight:800; line-height:1.1; letter-spacing:.06em; }
+    .brand-sub { color:rgba(255,255,255,.76); font-size:9px; font-weight:700; letter-spacing:.14em; line-height:1.1; }
+    .nav-links { gap:clamp(14px,1.65vw,28px); }
+    .nav-links a { color:rgba(255,255,255,.86); font-weight:700; }
+    .nav-links a::after { bottom:-25px; height:3px; border-radius:999px; background:var(--gold); }
+    .nav-links {
+      gap:6px;
+      padding:7px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(35,81,110,.18);
+      border-radius:999px;
+      backdrop-filter:blur(18px);
+      box-shadow:0 18px 50px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12);
+      pointer-events:auto;
+    }
+    .nav-links a {
+      display:inline-flex;
+      align-items:center;
+      min-height:34px;
+      padding:0 14px;
+      border-radius:999px;
+      color:rgba(255,255,255,.78);
+      font-size:12px;
+      transition:background .25s,color .25s,transform .25s;
+    }
+    .nav-links a:hover { background:rgba(255,255,255,.1); color:#fff; transform:translateY(-1px); }
+    .nav-links a::after { display:none; }
+    .nav-actions { display:none; gap:10px; align-items:center; margin-left:18px; }
+    .nav-actions a { min-height:42px; display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:9px 20px; font-size:14px; font-weight:900; text-decoration:none; white-space:nowrap; }
+    .nav-book-btn {
+      color:#23516E;
+      border:1px solid rgba(247,244,234,.72);
+      background:linear-gradient(135deg,rgba(247,244,234,.96),rgba(200,169,106,.9));
+      box-shadow:0 14px 34px rgba(200,169,106,.22);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .nav-book-btn:hover { transform:translateY(-1px); box-shadow:0 18px 42px rgba(200,169,106,.3); }
+    .nav-book-btn svg { width:17px; height:17px; }
+    #hero {
+      min-height:720px;
+      height:100svh;
+      align-items:center;
+      padding-top:72px;
+      background:
+        linear-gradient(90deg,rgba(35,81,110,.18),rgba(35,81,110,0) 52%),
+        url("assets/home-hero-t6-black.png") center center/cover no-repeat,
+        #17384C;
+    }
+    .hero-image {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+      transform:none;
+      filter:saturate(1.02) contrast(.98) brightness(1.08);
+      z-index:0;
+    }
+    #hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(90deg,rgba(35,81,110,.48) 0%,rgba(35,81,110,.28) 30%,rgba(35,81,110,.08) 58%,rgba(35,81,110,0) 100%),
+        linear-gradient(180deg,rgba(35,81,110,.05) 0%,rgba(35,81,110,0) 48%,rgba(35,81,110,.38) 100%);
+    }
+    #hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 18% 48%,rgba(200,169,106,.08),transparent 26%),
+        linear-gradient(90deg,rgba(35,81,110,.16),transparent 42%);
+      mix-blend-mode:normal;
+    }
+    .hero-content { max-width:none; min-height:calc(100svh - 72px); display:flex; flex-direction:column; justify-content:center; padding:0 clamp(30px,6.4vw,118px) 116px; }
+    .hero-eyebrow,
+    .hero-headline,
+    .hero-subline,
+    .hero-buttons { opacity:1; transform:none; animation:none; }
+    .hero-brand-text {
+      position:absolute;
+      top:32px;
+      left:clamp(30px,6.4vw,118px);
+      z-index:3;
+      font-family:'Noto Serif TC',serif;
+      font-size:18px;
+      font-weight:800;
+      letter-spacing:.12em;
+      color:rgba(247,244,234,.88);
+      text-shadow:0 12px 34px rgba(0,0,0,.32);
+    }
+    .hero-eyebrow { margin-bottom:18px; }
+    .hero-eyebrow-line { display:none; }
+    .hero-eyebrow-text { color:rgba(255,255,255,.74); font-size:13px; font-weight:700; letter-spacing:.11em; text-transform:none; text-shadow:0 2px 20px rgba(0,0,0,.38); }
+    .hero-headline { color:rgba(247,244,234,.9); font-size:clamp(38px,4.1vw,58px); line-height:1.14; letter-spacing:.018em; margin-bottom:18px; max-width:680px; text-shadow:0 10px 38px rgba(0,0,0,.38); }
+    .hero-headline span { display:block; white-space:nowrap; }
+    .hero-headline span:first-child { color:rgba(200,169,106,.9); }
+    .hero-headline::first-line { color:inherit; }
+    .hero-subline { color:rgba(255,255,255,.74); font-size:16px; font-weight:500; line-height:1.9; letter-spacing:.03em; max-width:600px; margin-bottom:30px; text-shadow:0 8px 30px rgba(0,0,0,.42); }
+    .hero-buttons { gap:10px; }
+    .hero-buttons .btn-primary,
+    .hero-buttons .line-btn,
+    .hero-buttons .btn-outline-gold {
+      min-height:46px;
+      border-radius:999px;
+      font-size:14px;
+      padding:11px 18px;
+      border:1px solid rgba(255,255,255,.2);
+      background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+      color:rgba(255,255,255,.92)!important;
+      box-shadow:0 14px 34px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.18);
+      backdrop-filter:blur(16px);
+    }
+    .hero-buttons .btn-primary svg,
+    .hero-buttons .btn-outline-gold svg {
+      width:16px;
+      height:16px;
+      flex:0 0 auto;
+      color:rgba(200,169,106,.9);
+    }
+    .hero-buttons .btn-primary:hover,
+    .hero-buttons .btn-outline-gold:hover { background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.08)); transform:translateY(-2px); }
+    .hero-buttons .btn-outline-gold {
+      border-color:rgba(200,169,106,.64);
+      background:linear-gradient(135deg,#C8A96A 0%,#D98A32 100%);
+      box-shadow:0 18px 42px rgba(217,138,50,.24), inset 0 1px 0 rgba(255,255,255,.2);
+      color:#fff!important;
+    }
+    .hero-buttons .btn-outline-gold:hover {
+      background:linear-gradient(135deg,#B88F45 0%,#C97928 100%);
+      border-color:#B88F45;
+    }
+    .hero-buttons .line-btn,
+    .line-btn {
+      border-color:rgba(88,201,132,.44)!important;
+      background:linear-gradient(135deg,#0FA95A 0%,#147A49 62%,#155C3C 100%)!important;
+      box-shadow:0 18px 42px rgba(15,169,90,.22), inset 0 1px 0 rgba(255,255,255,.24), inset 0 -1px 0 rgba(35,81,110,.32);
+      color:#fff!important;
+    }
+    .hero-buttons .line-btn {
+      min-height:58px;
+      padding:0 34px;
+      font-size:18px;
+      font-weight:800;
+      border-width:1.5px;
+      letter-spacing:.045em;
+    }
+    .hero-buttons .line-btn:hover,
+    .line-btn:hover { background:linear-gradient(135deg,#13B765 0%,#158653 62%,#176744 100%)!important; border-color:rgba(116,220,158,.54)!important; }
+    .hero-proof {
+      position:absolute;
+      left:clamp(30px,6.4vw,118px);
+      bottom:34px;
+      z-index:3;
+      display:grid;
+      grid-template-columns:repeat(4,max-content);
+      gap:10px;
+      max-width:min(980px,calc(100vw - 60px));
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:11px;
+      line-height:1.4;
+      letter-spacing:.08em;
+      color:rgba(247,244,234,.46);
+      mask-image:none;
+      -webkit-mask-image:none;
+    }
+    .hero-proof span {
+      display:inline-flex;
+      align-items:baseline;
+      gap:6px;
+      white-space:nowrap;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      backdrop-filter:blur(10px);
+    }
+    .hero-proof strong {
+      font-family:'Noto Serif TC',serif;
+      font-size:15px;
+      color:rgba(200,169,106,.78);
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+    .scroll-indicator { display:none; }
+    #assurance {
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at 12% 18%,rgba(200,169,106,.12),transparent 28%),
+        radial-gradient(circle at 84% 18%,rgba(31,95,99,.10),transparent 28%),
+        linear-gradient(180deg,#FFFFFF,#F7F4EA);
+      color:#23516E;
+      padding:112px 0;
+      border-top:1px solid #E6E2D8;
+      border-bottom:1px solid #E6E2D8;
+    }
+    #assurance .inner { display:block; }
+    #assurance .section-eyebrow,
+    #assurance .section-title-dark { justify-content:center; text-align:center; margin-left:auto; margin-right:auto; }
+    #assurance .section-eyebrow { justify-content:center; margin-bottom:14px; }
+    #assurance .section-eyebrow-line { background:rgba(35,81,110,.24); }
+    #assurance .section-eyebrow-text { color:rgba(35,81,110,.58)!important; font-size:12px; letter-spacing:.16em; }
+    #assurance .section-title-dark { color:#23516E; font-size:clamp(34px,4vw,56px); }
+    .assurance-grid { margin-top:52px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; background:transparent; border:0; }
+    .assurance-card {
+      min-height:260px;
+      padding:30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.62));
+      border:1px solid rgba(35,81,110,.1);
+      border-radius:18px;
+      align-items:flex-start;
+      text-align:left;
+      justify-content:flex-start;
+      gap:14px;
+      box-shadow:0 22px 60px rgba(35,81,110,.09), inset 0 1px 0 rgba(255,255,255,.92);
+      backdrop-filter:blur(16px);
+    }
+    .assurance-icon { border:1px solid rgba(200,169,106,.36); width:46px; height:46px; color:#23516E; border-radius:14px; background:rgba(200,169,106,.09); }
+    .assurance-icon svg { color:#23516E; width:24px; height:24px; }
+    .assurance-tag { display:inline-flex; font-size:10px; letter-spacing:.14em; color:var(--gold); border:1px solid rgba(200,169,106,.28); padding:4px 10px; border-radius:999px; align-self:flex-start; }
+    .assurance-title { color:#23516E; font-size:20px; line-height:1.45; }
+    .assurance-desc { color:rgba(23,33,51,.66); font-size:14px; line-height:1.85; display:block; overflow:visible; }
+    #routes {
+      background:
+        radial-gradient(circle at 82% 10%,rgba(200,169,106,.12),transparent 30%),
+        linear-gradient(180deg,#23516E,#17384C);
+      color:#fff;
+      padding:38px 0 34px;
+    }
+    #routes .section-title-light { color:#fff; }
+    #routes .section-sub-light { color:rgba(255,255,255,.72); }
+    #routes .routes-header { margin-bottom:20px; }
+    #routes .btn-primary { border-radius:6px; background:var(--gold); border-color:var(--gold); color:#fff; }
+    .routes-intro-grid { display:none; }
+    #about .reveal,
+    #assurance .reveal { opacity:1; transform:none; }
+    .routes-layout { grid-template-columns:220px minmax(0,1fr) 360px; gap:18px; align-items:start; }
+    .filter-panel { top:88px; border-radius:8px; background:rgba(255,255,255,.96); padding:18px; }
+    .route-filter { border-radius:999px; }
+    .routes-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .route-card { min-height:310px; border-radius:8px; box-shadow:0 16px 38px rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.12); overflow:hidden; }
+    .route-photo { display:block; height:136px; background-size:cover; background-position:center; position:relative; }
+    .route-photo::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.36)); }
+    .route-body { padding:16px; }
+    .route-tag { border-radius:4px; }
+    .route-summary { font-size:13px; line-height:1.65; }
+    .route-note { border-radius:6px; }
+    .route-service-note {
+      margin:0 0 20px;
+      padding:14px 18px;
+      border:1px solid rgba(200,169,106,.34);
+      border-radius:10px;
+      background:rgba(255,255,255,.72);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.8;
+    }
+    .route-card-details {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin:10px 0 4px;
+    }
+    .route-card-detail {
+      padding:9px 10px;
+      border:1px solid rgba(230,226,216,.86);
+      border-radius:8px;
+      background:rgba(247,244,234,.54);
+      font-size:12px;
+      line-height:1.45;
+      color:var(--muted);
+    }
+    .route-card-detail strong {
+      display:block;
+      color:var(--navy);
+      font-size:11px;
+      letter-spacing:.08em;
+      margin-bottom:3px;
+    }
+    .route-card-actions { margin-top:12px; display:flex; }
+    .route-card-actions a {
+      width:100%;
+      justify-content:center;
+      min-height:40px;
+      padding:9px 14px;
+      font-size:13px;
+    }
+    .route-side-panels { display:grid; gap:18px; }
+    .mock-price-card,
+    .mock-booking-card {
+      border-radius:8px;
+      border:1px solid rgba(200,169,106,.28);
+      box-shadow:0 18px 44px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .mock-price-card { background:linear-gradient(180deg,#fff,#fbf8f0); color:#172133; padding:20px; }
+    .mock-booking-card { background:linear-gradient(180deg,#23516E,#17384C); color:#fff; padding:20px; }
+    .mock-price-card h3,
+    .mock-booking-card h3 { margin:0; font-family:'Noto Serif TC',serif; font-size:22px; line-height:1.3; }
+    .mock-price-card p,
+    .mock-booking-card p { margin:7px 0 14px; color:rgba(23,33,51,.62); font-size:13px; line-height:1.65; }
+    .mock-booking-card p { color:rgba(255,255,255,.7); }
+    .mock-price-row { display:grid; grid-template-columns:1fr 92px; gap:12px; align-items:center; padding:12px 0; border-top:1px solid rgba(35,81,110,.1); }
+    .mock-price-row img { width:92px; aspect-ratio:4/3; object-fit:cover; border-radius:6px; }
+    .mock-price-row strong { display:block; color:#23516E; font-size:15px; }
+    .mock-price-row span { display:block; color:var(--gold); font-weight:800; margin-top:5px; }
+    .mock-booking-card .form-group { margin-bottom:10px; }
+    .mock-booking-card .form-group label { color:rgba(255,255,255,.75); }
+    .mock-booking-card input,
+    .mock-booking-card select,
+    .mock-booking-card textarea { width:100%; min-height:38px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.08); border-radius:5px; color:#fff; padding:9px 11px; }
+    .mock-booking-card textarea { min-height:72px; resize:vertical; }
+    .mock-booking-card input::placeholder,
+    .mock-booking-card textarea::placeholder { color:rgba(255,255,255,.36); }
+    .mock-booking-card select option { color:#172133; }
+    .mock-booking-card .btn-primary { width:100%; margin-top:4px; }
+    .mobile-copy { display:none; }
+
+    /* Unified page surface: softer section transitions, clearer controls */
+    #about,
+    #assurance,
+    #routes,
+    #vehicles,
+    #planning,
+    #quote,
+    #testimonials,
+    #faq,
+    #contact {
+      background:
+        radial-gradient(circle at 12% 0%,rgba(35,81,110,.055),transparent 24%),
+        linear-gradient(180deg,#F7F4EA 0%,#FFFFFF 48%,#F7F4EA 100%) !important;
+      color:var(--body);
+      border-top:1px solid rgba(230,226,216,.58);
+    }
+    #about { border-top:0; }
+    #vehicles .section-title-dark,
+    #quote .section-title-dark,
+    #faq .section-title-dark { color:var(--navy); }
+    #vehicles .section-sub-dark,
+    #quote .section-sub-dark,
+    #faq .section-sub-dark { color:var(--muted); }
+    #vehicles .section-eyebrow-line,
+    #quote .section-eyebrow-line,
+    #faq .section-eyebrow-line { background:rgba(35,81,110,.22); }
+    #vehicles .section-eyebrow-text,
+    #quote .section-eyebrow-text,
+    #faq .section-eyebrow-text { color:rgba(35,81,110,.62); }
+    .nav-links {
+      border-color:rgba(255,255,255,.18);
+      background:rgba(35,81,110,.22);
+      box-shadow:0 18px 50px rgba(23,56,76,.18), inset 0 1px 0 rgba(255,255,255,.14);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background:rgba(247,244,234,.16);
+      color:#fff;
+      box-shadow:inset 0 0 0 1px rgba(200,169,106,.25);
+    }
+    #routes .section-title-light { color:var(--navy); }
+    #routes .section-sub-light { color:var(--muted); }
+    #routes .routes-header { align-items:flex-end; }
+    .filter-panel,
+    .route-card,
+    .route-empty,
+    .routes-copy,
+    .pricing-card,
+    .pricing-notes,
+    .quote-form,
+    .estimate-card,
+    .vehicle-card,
+    .planning-cta-box,
+    .testimonial-card,
+    .contact-form,
+    .contact-method,
+    .contact-map {
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(230,226,216,.9);
+      border-radius:10px;
+      box-shadow:0 16px 42px rgba(35,81,110,.08);
+    }
+    .contact-method { padding:18px; }
+    .contact-actions {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+    }
+    .contact-action {
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-decoration:none;
+      border:1px solid rgba(200,169,106,.48);
+      background:rgba(255,255,255,.7);
+      color:var(--navy);
+      transition:transform .2s,box-shadow .2s,background .2s;
+    }
+    .contact-action:hover { transform:translateY(-1px); box-shadow:0 12px 28px rgba(35,81,110,.12); }
+    .contact-action.line,
+    .contact-action.whatsapp {
+      border-color:rgba(88,201,132,.44);
+      background:linear-gradient(135deg,#0FA95A 0%,#147A49 62%,#155C3C 100%);
+      color:#fff;
+    }
+    .contact-action.phone { background:linear-gradient(135deg,#C8A96A,#D98A32); color:#fff; border-color:rgba(200,169,106,.62); }
+    .contact-action.wechat { background:rgba(35,81,110,.94); color:#fff; border-color:rgba(35,81,110,.22); }
+    .contact-map { overflow:hidden; }
+    .route-card:hover,
+    .pricing-card:hover,
+    .vehicle-card:hover,
+    .testimonial-card:hover {
+      border-color:rgba(200,169,106,.48);
+      box-shadow:0 20px 54px rgba(35,81,110,.12);
+    }
+    .route-card { border-bottom-color:rgba(200,169,106,.32); }
+    .filter-panel { top:88px; }
+    .filter-heading,
+    .filter-label,
+    .route-title,
+    .pricing-card-title,
+    .pricing-notes-title,
+    .estimate-title,
+    .estimate-card-label,
+    .vehicle-name,
+    .faq-question-text,
+    .form-title { color:var(--navy); }
+    .route-filter {
+      background:rgba(247,244,234,.72);
+      border:1px solid rgba(230,226,216,.92);
+      color:rgba(35,81,110,.76);
+    }
+    .route-filter.active,
+    .route-filter:hover {
+      background:var(--navy);
+      color:#fff;
+      border-color:var(--navy);
+      box-shadow:0 10px 22px rgba(35,81,110,.16);
+    }
+    .filter-panel .route-filter::after { color:rgba(35,81,110,.38); }
+    .route-filter.active::after,
+    .route-filter:hover::after { color:rgba(247,244,234,.76); }
+    .pricing-card-header,
+    .pricing-row,
+    .pricing-cta,
+    .estimate-note,
+    .form-title,
+    .faq-item,
+    .filter-group,
+    .mock-price-row {
+      border-color:rgba(230,226,216,.9);
+    }
+    .pricing-row-label,
+    .pricing-notes-list li,
+    .estimate-card-sub,
+    .estimate-note,
+    .vehicle-cap-label,
+    .vehicle-feature,
+    .faq-answer,
+    .contact-method-sub { color:var(--muted); }
+    .vehicle-card { gap:18px; }
+    .vehicle-img {
+      border-radius:8px 8px 0 0;
+      background:linear-gradient(135deg,rgba(35,81,110,.95),rgba(23,56,76,.95));
+    }
+    .vehicle-name,
+    .vehicle-feature { color:var(--body); }
+    .vehicle-cap { color:var(--gold); }
+    .faq-grid { gap:0 48px; }
+    .faq-item {
+      background:transparent;
+      box-shadow:none;
+      border-radius:0;
+    }
+    .contact-form .form-title { color:var(--navy); }
+    .form-group label,
+    .contact-form .form-group label { color:rgba(35,81,110,.66); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .contact-form .form-group input,
+    .contact-form .form-group select,
+    .contact-form .form-group textarea {
+      background:#fff;
+      border:1px solid rgba(230,226,216,.95);
+      color:var(--body);
+      border-radius:8px;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color:rgba(111,116,119,.44); }
+    .form-group select option { background:#fff; color:var(--body); }
+    .mock-price-card {
+      border-color:rgba(230,226,216,.9);
+      box-shadow:0 16px 42px rgba(35,81,110,.08);
+    }
+    .mock-booking-card {
+      background:linear-gradient(180deg,#23516E,#17384C);
+      box-shadow:0 18px 44px rgba(35,81,110,.18);
+    }
+    .booking-clarity,
+    .payment-clarity {
+      margin-top:18px;
+      padding:18px;
+      border:1px solid rgba(200,169,106,.28);
+      border-radius:10px;
+      background:rgba(247,244,234,.62);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.8;
+    }
+    .booking-clarity strong,
+    .payment-clarity strong { color:var(--navy); }
+    .booking-clarity ol,
+    .payment-clarity ul {
+      margin:10px 0 0;
+      padding-left:20px;
+    }
+    .booking-clarity li,
+    .payment-clarity li { margin:5px 0; }
+    a[href*="line.me"].line-btn,
+    a[href*="line.me"].btn-primary,
+    .route-help-panel a[href*="line.me"],
+    .planning-cta-box a[href*="line.me"],
+    .pricing-cta a[href*="line.me"],
+    .mobile-bottom-bar a[href*="line.me"] {
+      border-color:rgba(88,201,132,.44)!important;
+      background:linear-gradient(135deg,#0FA95A 0%,#147A49 62%,#155C3C 100%)!important;
+      color:#fff!important;
+      box-shadow:0 18px 42px rgba(15,169,90,.22), inset 0 1px 0 rgba(255,255,255,.24);
+    }
+    a[href*="line.me"].line-btn:hover,
+    a[href*="line.me"].btn-primary:hover,
+    .route-help-panel a[href*="line.me"]:hover,
+    .planning-cta-box a[href*="line.me"]:hover,
+    .pricing-cta a[href*="line.me"]:hover {
+      background:linear-gradient(135deg,#13B765 0%,#158653 62%,#176744 100%)!important;
+      border-color:rgba(116,220,158,.54)!important;
+    }
+    footer { background:linear-gradient(180deg,#23516E,#17384C); }
+    .mobile-bottom-bar { display:none; }
+    @media(max-width:1280px) {
+      .nav-links a { padding:0 10px; font-size:12px; }
+    }
+    @media(max-width:1120px) {
+      .routes-layout { grid-template-columns:210px minmax(0,1fr); }
+      .route-side-panels { grid-column:1 / -1; grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:1100px) {
+      .brand-lockup { min-width:0; }
+      .brand-sub { display:none; }
+      .nav-actions { display:none; }
+    }
+    @media(max-width:900px) {
+      body { padding-bottom:64px; }
+      #hero { min-height:680px; height:100svh; background-position:64% center; }
+      .hero-content { min-height:calc(100svh - 64px); justify-content:center; padding:64px 20px 92px; }
+      .hero-brand-text { position:relative; top:auto; left:auto; margin-bottom:12px; font-size:16px; letter-spacing:.1em; }
+      .hero-eyebrow { display:none; }
+      .hero-headline { font-size:clamp(34px,9.6vw,40px); line-height:1.16; letter-spacing:0; margin-bottom:14px; max-width:100%; word-break:keep-all; overflow-wrap:normal; }
+      .hero-headline span { display:block; white-space:nowrap; }
+      .hero-subline { font-size:14px; line-height:1.7; letter-spacing:.03em; margin-bottom:20px; max-width:100%; }
+      .desktop-copy { display:none; }
+      .mobile-copy { display:inline; }
+      .hero-buttons { display:grid; grid-template-columns:1fr; width:100%; max-width:390px; gap:10px; }
+      .hero-buttons .line-btn,
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-outline-gold { width:100%; justify-content:center; min-height:48px; font-size:14px; padding:0 18px; }
+      .hero-buttons .line-btn { min-height:54px; font-size:16px; }
+      .hero-proof { display:none; }
+      .hero-proof strong { font-size:15px; }
+      #assurance .inner { grid-template-columns:1fr; }
+      #assurance .section-eyebrow,
+      #assurance .section-title-dark,
+      .assurance-grid { grid-column:auto; }
+      .assurance-grid { grid-template-columns:repeat(2,1fr); }
+      .routes-layout { grid-template-columns:1fr; }
+      .filter-panel { position:static; }
+      .filter-panel .route-filters { overflow-x:auto; flex-wrap:nowrap; padding-bottom:4px; }
+      .filter-panel .route-filter { flex:0 0 auto; }
+      .routes-grid { grid-template-columns:1fr; }
+      .route-card-details { grid-template-columns:1fr; }
+      .route-side-panels { grid-template-columns:1fr; }
+      .contact-actions { grid-template-columns:1fr; }
+      .mobile-bottom-bar {
+        position:fixed;
+        z-index:1200;
+        left:0;
+        right:0;
+        bottom:0;
+        height:64px;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        box-shadow:0 -12px 32px rgba(0,0,0,.18);
+      }
+      .mobile-bottom-bar a { border-radius:0!important; min-height:64px; justify-content:center; }
+      .mobile-bottom-bar .phone { background:var(--gold); color:#fff!important; border-color:var(--gold)!important; }
+    }
+    @media(max-width:600px) {
+      .hero-content { padding-left:20px; padding-right:20px; padding-bottom:128px; }
+      .hero-headline { font-size:clamp(33px,9.2vw,38px); }
     }
   </style>
 </head>
@@ -8453,15 +9104,14 @@
 
 <!-- ════ NAV ════ -->
 <nav id="main-nav" aria-label="主導覽">
-  <a href="#hero" class="nav-brand">藍教頭包車旅遊</a>
   <ul class="nav-links">
     <li><a href="#about">關於我們</a></li>
     <li><a href="#routes">包車路線</a></li>
-    <li><a href="#planning">行程規劃</a></li>
+    <li><a href="#planning">預約流程</a></li>
     <li><a href="#quote">服務報價</a></li>
     <li><a href="#testimonials">旅客評價</a></li>
     <li><a href="#faq">常見問題</a></li>
-    <li><a href="#contact" class="nav-cta">立即預約</a></li>
+    <li><a href="#contact">聯絡我們</a></li>
   </ul>
   <button class="hamburger" id="hamburger-btn" aria-label="開啟選單" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -8472,49 +9122,53 @@
   <a href="#about" onclick="closeMobileMenu()">關於我們</a>
   <div class="mobile-divider"></div>
   <a href="#routes" onclick="closeMobileMenu()">包車路線</a>
-  <a href="#planning" onclick="closeMobileMenu()">行程規劃</a>
+  <a href="#planning" onclick="closeMobileMenu()">預約流程</a>
   <a href="#quote" onclick="closeMobileMenu()">服務報價</a>
   <a href="#testimonials" onclick="closeMobileMenu()">旅客評價</a>
   <a href="#faq" onclick="closeMobileMenu()">常見問題</a>
-  <a href="#contact" class="mobile-cta" onclick="closeMobileMenu()">立即預約</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMobileMenu()">填寫預約</a>
 </div>
 
 
 <!-- ════ HERO ════ -->
 <section id="hero" aria-label="首頁主視覺">
+  <img class="hero-image" src="assets/home-hero-t6-black.png" alt="黑色福斯 T6 包車行駛於山海公路">
   <div class="hero-content">
+    <div class="hero-brand-text">藍教頭包車旅遊</div>
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-line"></span>
       <span class="hero-eyebrow-text">Yilan · Northeast Taiwan Charter Service</span>
     </div>
-    <h1 class="hero-headline">宜蘭出發<br>帶你走遍全台灣</h1>
-    <p class="hero-subline">從蘭陽平原到墾丁、從太魯閣到日月潭，專屬包車一路同行</p>
+    <h1 class="hero-headline"><span>宜蘭出發</span><span>帶你走遍全台灣</span></h1>
+    <p class="hero-subline"><span class="desktop-copy">合法 R 牌包車與在地嚮導同行，從宜蘭啟程，替家人、朋友與旅伴安排舒適有節奏的全台包車旅程。</span><span class="mobile-copy">宜蘭出發・全台接送・包車旅遊</span></p>
     <div class="hero-buttons">
-      <a href="#routes" class="btn-primary">瀏覽路線</a>
       <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn">
         <svg aria-hidden="true"><use href="#ico-line"></use></svg>
-        LINE 官方洽詢 @blue-charter
+        官方 LINE 詢問
       </a>
+      <a href="#contact" class="btn-primary">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path><path d="M8 15h.01"></path><path d="M12 15h.01"></path><path d="M16 15h.01"></path></svg>
+        填寫預約
+      </a>
+      <a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="btn-outline-gold">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.8 8.7c.2 3 2.2 5.1 5.2 5.8"></path></svg>
+        WhatsApp 聯絡
+      </a>
+    </div>
+    <div class="hero-proof" aria-label="服務亮點">
+      <span><strong>8年+</strong>在地服務經驗</span>
+      <span><strong>500+</strong>組旅客好評</span>
+      <span><strong>全台灣</strong>全區域覆蓋</span>
+      <span><strong>24h</strong>即時客服響應</span>
     </div>
   </div>
   <div class="scroll-indicator" aria-hidden="true">
     <span class="scroll-indicator-text">Scroll</span>
     <div class="scroll-chevron">
       <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
-        <path d="M1 1L10 10L19 1" stroke="#F4EFE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M1 1L10 10L19 1" stroke="#F7F4EA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </div>
-  </div>
-</section>
-
-
-<!-- ════ TRUST BAR ════ -->
-<section id="trust-bar" aria-label="服務亮點">
-  <div class="trust-inner">
-    <div class="trust-stat"><span class="trust-value">8年+</span><span class="trust-label">在地服務經驗</span></div>
-    <div class="trust-stat"><span class="trust-value">500+</span><span class="trust-label">組旅客好評</span></div>
-    <div class="trust-stat"><span class="trust-value" style="font-size:clamp(22px,3vw,38px)">全台灣</span><span class="trust-label">全區域覆蓋</span></div>
-    <div class="trust-stat"><span class="trust-value">24h</span><span class="trust-label">即時客服響應</span></div>
   </div>
 </section>
 
@@ -8565,8 +9219,8 @@
       <div class="assurance-card reveal reveal-d1">
         <div class="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M17.5 19H9a7 7 0 110-14h8.5"></path><path d="M21 15l-4 4 4 4"></path></svg></div>
         <div class="assurance-tag">RAINY DAY PLAN</div>
-        <div class="assurance-title">雨天備案，行程不打折</div>
-        <div class="assurance-desc">宜蘭多雨，我們為每條路線備有雨天替代方案。天氣若有變化，司機會主動協助調整景點，讓旅程圓滿。</div>
+        <div class="assurance-title">雨天備案，彈性調整</div>
+        <div class="assurance-desc">宜蘭多雨，我們會依當日天候、路況與旅客需求協助調整景點與停留節奏，讓包車接送更從容。</div>
       </div>
       <div class="assurance-card reveal reveal-d2">
         <div class="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"></path></svg></div>
@@ -8583,8 +9237,8 @@
       <div class="assurance-card reveal reveal-d1">
         <div class="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></div>
         <div class="assurance-tag">MULTI-LANGUAGE</div>
-        <div class="assurance-title">中、英、日語皆可溝通</div>
-        <div class="assurance-desc">歡迎外國旅客。可以英文或日文洽詢，行程中司機能以基礎英語介紹景點，讓外國朋友也能安心包車。</div>
+        <div class="assurance-title">外語需求可提前提出</div>
+        <div class="assurance-desc">如需英文、日文或其他語言司機，請於預約時提前告知；實際是否可提供與費用需依日期、路線與車輛安排另行確認。</div>
       </div>
       <div class="assurance-card reveal reveal-d2">
         <div class="assurance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
@@ -8892,30 +9546,30 @@
 
 
 
-<!-- ════ 行程規劃 ════ -->
-<section id="planning" aria-label="行程規劃">
+<!-- ════ 預約流程 ════ -->
+<section id="planning" aria-label="預約流程">
   <div class="inner">
     <div class="planning-header">
       <div class="section-eyebrow reveal"><span class="section-eyebrow-line" style="background:rgba(26,26,26,.2)"></span><span class="section-eyebrow-text" style="color:var(--navy);opacity:.6">How It Works</span><span class="section-eyebrow-line" style="background:rgba(26,26,26,.2)"></span></div>
-      <h2 class="section-title-light reveal reveal-d1">預約包車，四步驟輕鬆搞定</h2>
-      <p class="section-sub-light reveal reveal-d2" style="margin:12px auto 0;text-align:center">從詢問到出發，我們全程陪您規劃，讓每一趟旅程都值得期待</p>
+      <h2 class="section-title-light reveal reveal-d1">預約包車，四步驟完成確認</h2>
+      <p class="section-sub-light reveal reveal-d2" style="margin:12px auto 0;text-align:center">送出預約表單並非立即完成訂車；需確認日期、路線、車型與報價，訂金完成後才會正式保留車輛。</p>
     </div>
     <div class="planning-steps">
-      <div class="planning-step reveal"><div class="step-number">01</div><div class="step-title">LINE 初步洽詢</div><div class="step-desc">加入官方 LINE @blue-charter，告訴我們出發日期、人數與目的地需求</div></div>
-      <div class="planning-step reveal reveal-d1"><div class="step-number">02</div><div class="step-title">確認行程規劃</div><div class="step-desc">我們提供建議路線與時間安排，依您偏好調整，直到滿意為止</div></div>
-      <div class="planning-step reveal reveal-d2"><div class="step-number">03</div><div class="step-title">確認報價訂車</div><div class="step-desc">收到報價單後繳付訂金完成預約，行前再次確認所有細節</div></div>
-      <div class="planning-step reveal reveal-d3"><div class="step-number">04</div><div class="step-title">出發盡興旅行</div><div class="step-desc">司機準時抵達接送，全程貼心服務，讓您放心享受每個當下</div></div>
+      <div class="planning-step reveal"><div class="step-number">01</div><div class="step-title">填寫預約表單</div><div class="step-desc">留下日期、人數、出發地、目的地與備註。</div></div>
+      <div class="planning-step reveal reveal-d1"><div class="step-number">02</div><div class="step-title">專人確認行程</div><div class="step-desc">我們會於 24 小時內透過 LINE、電話或 WhatsApp 與您確認路線、車型與報價。</div></div>
+      <div class="planning-step reveal reveal-d2"><div class="step-number">03</div><div class="step-title">支付訂金</div><div class="step-desc">確認後需支付 50% 訂金，才算完成保留車輛。</div></div>
+      <div class="planning-step reveal reveal-d3"><div class="step-number">04</div><div class="step-title">行程出發</div><div class="step-desc">司機依約定時間與地點接送，尾款於行程當日支付。</div></div>
     </div>
     <div class="planning-cta-box reveal">
       <div>
         <h3>準備好出發了嗎？</h3>
-        <p>現在透過 LINE 聯絡我們，即可獲得免費行程諮詢與客製化報價</p>
+        <p>可先透過 LINE、WhatsApp 或表單留下需求；客服確認後才會提供訂金付款方式。</p>
       </div>
       <div class="planning-cta-buttons">
         <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn" style="font-size:14px;padding:12px 24px;">
           <svg aria-hidden="true"><use href="#ico-line"></use></svg>LINE 立即洽詢
         </a>
-        <a href="#quote" class="btn-outline-gold" style="padding:12px 24px;font-size:14px;">試算報價</a>
+        <a href="#contact" class="btn-outline-gold" style="padding:12px 24px;font-size:14px;">填寫預約</a>
       </div>
     </div>
   </div>
@@ -8927,7 +9581,7 @@
   <div class="inner">
     <div class="section-eyebrow reveal"><span class="section-eyebrow-line"></span><span class="section-eyebrow-text">Pricing</span></div>
     <h2 class="section-title-dark reveal reveal-d1">服務報價表</h2>
-    <p class="section-sub-dark reveal reveal-d2">透明定價・機場接送與包車旅遊費用一目了然，實際以 LINE 確認為準</p>
+    <p class="section-sub-dark reveal reveal-d2">透明定價・機場接送與包車旅遊費用一目了然，實際路線、車型與付款方式以客服確認為準。</p>
 
     <div class="pricing-grid">
       <!-- 機場接送 -->
@@ -8987,7 +9641,19 @@
         <li>報價皆為<strong>10 小時</strong>為計算，若超過以 <strong>500 元 / 小時</strong>計算。</li>
         <li>深夜 / 清晨時段（<strong>23:00 - 06:00</strong>）或<strong>連假期間</strong>，費用可能有所調整。</li>
         <li>如需<strong>兒童安全座椅、多點停靠</strong>，請提前告知以利安排。</li>
+        <li>本服務以<strong>包車接送與路線建議</strong>為主，景點、餐食、門票與停留時間可依旅客需求調整；如需完整套裝旅遊規劃，可另行協助媒合合作旅行社。</li>
       </ul>
+      <div class="payment-clarity">
+        <strong>如何付款？需要先付全額嗎？</strong>
+        <p>預約送出後，我們會先確認日期、路線、車型與報價。確認無誤後，需支付 50% 訂金，才算正式保留車輛。</p>
+        <ul>
+          <li>指定銀行轉帳付款：合作金庫銀行 006 羅東分行 0580872062668</li>
+          <li>LINE Pay</li>
+          <li>信用卡 / 指定付款連結（客服確認後提供）</li>
+          <li>尾款行程當日依約定方式支付給司機</li>
+        </ul>
+        <p>網站不提供立即線上付款，也不放固定付款 QR Code；付款 QR Code、信用卡付款連結或其他指定付款連結會在客服確認後再提供。</p>
+      </div>
       <div class="pricing-cta">
         <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn">
           <svg aria-hidden="true"><use href="#ico-line"></use></svg>LINE 洽詢精確報價 @blue-charter
@@ -9020,7 +9686,7 @@
       </div>
       <div class="testimonial-card reveal reveal-d2">
         <div class="testimonial-stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
-        <div class="testimonial-text">「從日本來台旅遊，透過 LINE 英文洽詢超順暢！司機幫我們推薦了許多網上沒有的在地小吃，還主動在每個景點幫我們拍照。這些才是旅遊最珍貴的記憶。」</div>
+        <div class="testimonial-text">「從日本來台旅遊，預約前先透過 LINE 確認路線與接送需求很安心。司機幫我們推薦了許多網上沒有的在地小吃，還主動在每個景點幫我們拍照。這些才是旅遊最珍貴的記憶。」</div>
         <div class="testimonial-author"><div class="testimonial-avatar">田</div><div><div class="testimonial-name">田中さん（日本）</div><div class="testimonial-meta">外國旅客・宜蘭北海岸一日</div></div></div>
       </div>
     </div>
@@ -9073,10 +9739,10 @@
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-question-text">外國旅客可以預約嗎？語言溝通沒問題？</div>
+          <div class="faq-question-text">可以安排外語司機嗎？</div>
           <div class="faq-icon"></div>
         </div>
-        <div class="faq-answer">歡迎外國旅客！可透過 LINE 以中文、英文或日文洽詢，行程中司機可用基礎英語溝通。如需日語服務，請於預約時事先告知。</div>
+        <div class="faq-answer">歡迎外國旅客預約，可透過 LINE 或 WhatsApp 先提供出發日期、人數與路線需求。如需英文、日文或其他語言司機，請於預約時提前告知，我們會依日期、路線與車輛安排協助媒合，實際是否可提供與費用需另行確認。<br><small>Foreign-language driver service is available upon request and subject to availability. Additional fees may apply.</small></div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
@@ -9087,10 +9753,31 @@
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question-text">線上預訂後可以直接付款嗎？</div>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-answer">送出預約後，我們會先確認日期、路線、車型與報價。確認完成後，會提供訂金付款方式。目前可支援銀行轉帳、LINE Pay 或信用卡 / 指定付款連結。訂金完成後，才算正式保留車輛。尾款可於行程當日依約定方式支付。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
           <div class="faq-question-text">如何付款？需要先付全額嗎？</div>
           <div class="faq-icon"></div>
         </div>
-        <div class="faq-answer">預約時支付訂金（30%，銀行轉帳），尾款於行程結束後當天付現給司機。若需使用 LINE Pay 或信用卡，請事先告知，我們將提供相應方式。</div>
+        <div class="faq-answer">預約送出後，我們會先確認日期、路線、車型與報價。確認無誤後，需支付 50% 訂金，才算正式保留車輛。可支援：指定銀行轉帳付款（合作金庫銀行 006 羅東分行 0580872062668）、LINE Pay、信用卡 / 指定付款連結，以及尾款行程當日支付給司機。付款 QR Code 或付款連結會由客服確認後再提供，網站不做立即線上付款。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question-text">你們是販售旅行社套裝行程嗎？</div>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-answer">本服務以包車接送與路線建議為主，實際景點、餐食、門票與行程內容可依旅客需求調整；不代售旅行社套裝行程。如需完整套裝旅遊規劃，可另行協助媒合合作旅行社。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-question-text">花蓮、蘇花或山區路線需要如何調整？</div>
+          <div class="faq-icon"></div>
+        </div>
+        <div class="faq-answer">花蓮、蘇花公路、山區及長途跨縣市路線，實際安排需依當日路況、天候與交通管制調整，建議預約前先與客服確認。我們會提供順路建議與備案，但不做絕對保證。</div>
       </div>
     </div>
   </div>
@@ -9104,15 +9791,22 @@
       <div class="contact-info">
         <div class="section-eyebrow reveal"><span class="section-eyebrow-line" style="background:rgba(26,26,26,.3)"></span><span class="section-eyebrow-text" style="color:var(--navy);opacity:.6">Contact &amp; Booking</span></div>
         <h2 class="section-title-light reveal reveal-d1">聯絡預約</h2>
-        <p class="section-sub-light reveal reveal-d2">最快的方式是 LINE 直接洽詢，我們通常在一小時內回覆</p>
+        <p class="section-sub-light reveal reveal-d2">最快的方式是 LINE 直接洽詢；海外旅客或不方便使用 LINE，也可透過 WhatsApp 或 WeChat 聯絡。</p>
+
+        <div class="contact-actions reveal reveal-d2" aria-label="快速聯絡方式">
+          <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="contact-action line">LINE 詢問</a>
+          <a href="tel:0935814087" class="contact-action phone">電話聯絡</a>
+          <a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="contact-action whatsapp">WhatsApp 聯絡</a>
+          <a href="weixin://dl/chat?lantaiyang355979" class="contact-action wechat">WeChat 聯絡</a>
+        </div>
 
         <div class="contact-methods reveal reveal-d2">
           <div class="contact-method">
-            <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#06C755"><use href="#ico-line"></use></svg></div>
+            <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#0FA95A"><use href="#ico-line"></use></svg></div>
             <div>
               <div class="contact-method-label">LINE 官方帳號</div>
               <div class="contact-method-value">@blue-charter</div>
-              <div class="contact-method-sub">即時洽詢・行程規劃・報價確認<br>
+              <div class="contact-method-sub">即時洽詢・路線需求・報價確認<br>
                 <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn" style="margin-top:12px;font-size:13px;padding:10px 22px;display:inline-flex;">
                   <svg aria-hidden="true" style="width:16px;height:16px"><use href="#ico-line"></use></svg>開啟 LINE 聊天
                 </a>
@@ -9123,8 +9817,24 @@
             <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg></div>
             <div>
               <div class="contact-method-label">電話</div>
-              <div class="contact-method-value">0931-041-939</div>
+              <div class="contact-method-value">0935-814-087</div>
               <div class="contact-method-sub">服務時間：每日 08:00–21:00</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.8 8.7c.2 3 2.2 5.1 5.2 5.8"></path></svg></div>
+            <div>
+              <div class="contact-method-label">WhatsApp</div>
+              <div class="contact-method-value">+886 935-814-087</div>
+              <div class="contact-method-sub">適合海外旅客或不方便使用 LINE 的客人。</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 15.5 4 19v-4.2A7.2 7.2 0 0 1 2 10c0-4.4 4.5-8 10-8s10 3.6 10 8-4.5 8-10 8c-1.6 0-3.1-.3-4.5-.9Z"></path><path d="M8 9h.01M12 9h.01M16 9h.01"></path></svg></div>
+            <div>
+              <div class="contact-method-label">WeChat</div>
+              <div class="contact-method-value">lantaiyang355979</div>
+              <div class="contact-method-sub">手機可嘗試直接開啟 WeChat；若無法跳轉，請搜尋帳號。</div>
             </div>
           </div>
           <div class="contact-method">
@@ -9160,11 +9870,28 @@
             <select><option>宜蘭縣內景點</option><option>宜蘭 → 花蓮</option><option>宜蘭 → 台東</option><option>宜蘭 → 北部景點</option><option>宜蘭 → 東北角海岸</option><option>機場 / 車站接送</option><option>客製化路線</option></select>
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group"><label>聯絡方式偏好</label>
+            <select><option>LINE</option><option>電話</option><option>WhatsApp</option><option>WeChat，請於備註留下帳號</option></select>
+          </div>
+          <div class="form-group"><label>是否需要外語司機</label>
+            <select><option>不需要</option><option>英文</option><option>日文</option><option>其他，請於備註說明</option></select>
+          </div>
+        </div>
         <div class="form-row full">
-          <div class="form-group"><label>備註說明</label><textarea placeholder="請說明您的特殊需求、希望參觀的景點、嬰兒座椅需求或其他注意事項…"></textarea></div>
+          <div class="form-group"><label>備註說明</label><textarea placeholder="請說明您的特殊需求、希望參觀的景點、嬰兒座椅、長輩同行、行李數量或其他注意事項。"></textarea></div>
         </div>
         <button class="btn-primary form-submit" onclick="submitForm(this)">送出預約申請</button>
-        <p style="font-size:12px;color:var(--cream-70);margin-top:14px;text-align:center;line-height:1.7;">送出後我們將於 24 小時內透過 LINE 或電話與您確認行程</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center;line-height:1.7;">送出後我們將於 24 小時內透過 LINE、電話或 WhatsApp 與您確認；送出表單並非立即完成訂車。</p>
+        <div class="booking-clarity">
+          <strong>預約確認流程</strong>
+          <ol>
+            <li>填寫預約表單：留下日期、人數、出發地、目的地與備註。</li>
+            <li>專人確認行程：我們會於 24 小時內透過 LINE、電話或 WhatsApp 與您確認路線、車型與報價。</li>
+            <li>支付訂金：確認後需支付 50% 訂金，才算完成保留車輛。</li>
+            <li>行程出發：司機依約定時間與地點接送，尾款於行程當日支付。</li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
@@ -9177,7 +9904,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">藍教頭包車旅遊</div>
-        <div class="footer-brand-tagline">宜蘭出發・走遍全台灣<br>專業包車，讓旅行回歸純粹的美好<br><br>LINE：@blue-charter<br>電話：0931-041-939<br>服務時間：每日 08:00–21:00</div>
+        <div class="footer-brand-tagline">宜蘭出發・走遍全台灣<br>專業包車，讓旅行回歸純粹的美好<br><br>LINE：@blue-charter<br>電話：0935-814-087<br>WhatsApp：+886 935-814-087<br>WeChat：lantaiyang355979<br>服務時間：每日 08:00–21:00</div>
       </div>
       <div>
         <div class="footer-col-title">包車路線</div>
@@ -9196,7 +9923,7 @@
           <a href="#about">關於我們</a>
           <a href="#assurance">服務保障</a>
           <a href="#vehicles">車型介紹</a>
-          <a href="#planning">行程規劃流程</a>
+          <a href="#planning">預約流程</a>
           <a href="#quote">服務報價表</a>
           <a href="#faq">常見問題</a>
         </div>
@@ -9205,6 +9932,7 @@
         <div class="footer-col-title">立即聯絡</div>
         <div class="footer-links">
           <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener">LINE @blue-charter</a>
+          <a href="https://wa.me/886935814087" target="_blank" rel="noopener">WhatsApp 聯絡</a>
           <a href="#contact">線上預約表單</a>
           <a href="#testimonials">旅客評價</a>
         </div>
@@ -9246,26 +9974,89 @@
   function renderRouteExplorer(){
     const section = document.getElementById('routes');
     if(!section) return;
+    const routeImages = {
+      yilan:'assets/generated/route-taipingshan-v1.png',
+      hualien:'assets/generated/route-hualien-v1.png',
+      north:'assets/generated/route-jiufen-v1.png',
+      northeast:'assets/generated/route-taitung-v1.png',
+      taitung:'assets/generated/route-taitung-v1.png',
+      taipei:'assets/generated/route-jiufen-v1.png',
+      taichung:'assets/generated/route-taipingshan-v1.png',
+      tainan:'assets/generated/route-taitung-v1.png',
+      kaohsiung:'assets/generated/route-taitung-v1.png',
+      airport:'assets/generated/vehicle-van-black-v1.png'
+    };
     const routes = [
-      {cat:'yilan', type:'family nature', region:'宜蘭', badge:'親子首選', name:'宜蘭經典親子一日', summary:'河岸、傳藝、溫泉與夜市一次排好，適合第一次來宜蘭的家庭。', spots:'冬山河親水公園 → 傳藝中心 → 礁溪溫泉 → 羅東夜市', time:'8-9 小時', people:'1-8 人', note:'長輩小孩都好走，雨天可換觀光工廠。'},
-      {cat:'yilan', type:'nature seasonal', region:'宜蘭', badge:'山林療癒', name:'太平山雲海森林行', summary:'清晨出發看山嵐、步道與森林鐵道，節奏慢一點也舒服。', spots:'太平山 → 見晴懷古步道 → 翠峰湖 → 鳩之澤溫泉', time:'9 小時', people:'1-8 人', note:'適合喜歡自然景觀、攝影與秋冬賞楓。'},
-      {cat:'hualien', type:'nature classic', region:'花蓮', badge:'壯闊景觀', name:'花蓮太魯閣清水斷崖', summary:'從宜蘭沿蘇花一路南下，把海岸與峽谷精華串成一日旅程。', spots:'清水斷崖 → 太魯閣步道 → 七星潭 → 花蓮市區', time:'10 小時', people:'1-8 人', note:'可依開放路況調整步道，保留彈性。'},
-      {cat:'hualien', type:'food nature', region:'花蓮', badge:'慢遊縱谷', name:'花東縱谷田園小旅行', summary:'湖景、稻浪、糖廠與在地小吃，適合想避開人潮的旅客。', spots:'鯉魚潭 → 光復糖廠 → 瑞穗牧場 → 玉里小吃', time:'9-10 小時', people:'1-8 人', note:'春夏看田景，秋冬走溫泉與農場更舒服。'},
-      {cat:'north', type:'culture photo', region:'北部', badge:'人氣拍照', name:'九份北海岸文化遊', summary:'老街、地質海岸與夕陽一次完成，不必自己轉車趕行程。', spots:'九份老街 → 野柳地質公園 → 金山老街 → 淡水夕陽', time:'9 小時', people:'1-8 人', note:'適合外國旅客、情侶與喜歡攝影的朋友。'},
-      {cat:'northeast', type:'nature photo', region:'東北角', badge:'海景步道', name:'東北角海岸風情一日', summary:'海灣、步道、鐵道自行車，沿海景點用順路方式排更輕鬆。', spots:'福隆 → 龍洞 → 鼻頭角步道 → 深澳鐵道自行車', time:'8 小時', people:'1-8 人', note:'夏季可偏海邊，冬季改咖啡與景觀步道。'},
-      {cat:'taitung', type:'seasonal nature', region:'台東', badge:'季節限定', name:'台東縱谷熱氣球行', summary:'熱氣球季、伯朗大道與池上米香，長距離交給司機處理。', spots:'鹿野高台 → 伯朗大道 → 池上 → 初鹿牧場', time:'10 小時+', people:'1-8 人', note:'建議多日遊，單日可作精華往返規劃。'},
-      {cat:'taipei', type:'culture food', region:'台北', badge:'城市精華', name:'台北城市文化美食日', summary:'101、老街、寺廟與夜市串成清楚動線，適合想看城市面貌。', spots:'台北101 → 大稻埕 → 龍山寺 → 象山 → 饒河夜市', time:'9 小時', people:'1-8 人', note:'可替換成親子博物館或購物百貨路線。'},
-      {cat:'taichung', type:'nature family', region:'台中', badge:'山湖雙景', name:'日月潭清境高山線', summary:'湖光、高山牧場與雲海展望，適合不想自駕山路的旅客。', spots:'日月潭 → 清境農場 → 小瑞士花園 → 合歡山展望', time:'10 小時+', people:'1-8 人', note:'建議早出發，也可安排兩天一夜。'},
-      {cat:'tainan', type:'culture food', region:'台南', badge:'古都美食', name:'台南古蹟小吃深度遊', summary:'用包車把分散的古蹟與小吃接起來，少走冤枉路。', spots:'赤崁樓 → 安平古堡 → 神農街 → 國華街 → 花園夜市', time:'10 小時+', people:'1-8 人', note:'適合美食控與歷史文化旅客。'},
-      {cat:'kaohsiung', type:'family culture', region:'高雄', badge:'港都散策', name:'高雄港都親子文化線', summary:'海港、藝術、夜市與渡輪，安排成不趕路的南部一日。', spots:'駁二 → 西子灣 → 旗津渡輪 → 衛武營 → 瑞豐夜市', time:'10 小時+', people:'1-8 人', note:'可銜接墾丁或台南成多日玩法。'},
-      {cat:'airport', type:'transfer family', region:'接送', badge:'省心接駁', name:'機場車站接送與順遊', summary:'桃園、松山、台北車站到宜蘭，接送途中可加排景點。', spots:'機場/車站 → 九份或礁溪順遊 → 飯店入住', time:'依距離', people:'1-8 人', note:'適合帶行李、長輩、小孩或紅眼班機。'}
+      {cat:'popular', type:'family senior yilan', region:'熱門路線', badge:'依需求報價', name:'宜蘭經典包車接送', summary:'以宜蘭市區、礁溪、羅東與周邊景點為主，依旅伴步調調整停留時間。', fit:'初次到宜蘭、家庭、長輩同行', time:'8-9 小時', people:'1-8 人', origin:'宜蘭 / 礁溪 / 羅東', dest:'宜蘭縣內景點', quote:'依實際需求報價', note:'景點僅作參考，可依旅客需求調整。'},
+      {cat:'airport', type:'transfer business popular', region:'機場接送', badge:'依地址報價', name:'桃園 / 松山機場接送', summary:'機場、車站與飯店之間點對點接送，也可視時間加入順路停靠。', fit:'帶行李、紅眼班機、家庭旅客', time:'依航班與距離', people:'1-8 人', origin:'機場 / 車站 / 飯店', dest:'宜蘭或指定地點', quote:'依實際需求報價', note:'航班與接送時間請先提供客服確認。'},
+      {cat:'yilan', type:'family senior', region:'宜蘭一日包車', badge:'親子友善', name:'宜蘭一日包車', summary:'冬山河、傳藝、礁溪、羅東等路線可依天氣與體力彈性安排。', fit:'親子、長輩、朋友小旅行', time:'8-9 小時', people:'1-8 人', origin:'宜蘭各地', dest:'宜蘭縣內景點', quote:'依實際需求報價', note:'可提前告知嬰兒座椅、輪椅或行李需求。'},
+      {cat:'northeast', type:'photo popular', region:'東北角路線', badge:'海岸景觀', name:'東北角包車接送', summary:'福隆、龍洞、鼻頭角、深澳等沿海景點以順路方式建議。', fit:'攝影、情侶、海岸景點', time:'8-9 小時', people:'1-8 人', origin:'宜蘭 / 台北 / 新北', dest:'東北角沿線', quote:'依實際需求報價', note:'海岸與步道安排需依天候與現場管制調整。'},
+      {cat:'hualien', type:'nature popular', region:'長途包車', badge:'需先確認', name:'花蓮 / 蘇花長途包車', summary:'宜蘭往花蓮、蘇花與山區路線以接送與路線建議為主，需保留彈性。', fit:'長途跨縣市、自然景觀', time:'10 小時+', people:'1-8 人', origin:'宜蘭 / 花蓮', dest:'花蓮、蘇花或山區', quote:'依實際需求報價', note:'實際安排需依當日路況、天候與交通管制調整。'},
+      {cat:'family', type:'yilan popular', region:'親子包車', badge:'慢節奏', name:'親子友善包車', summary:'可安排較少轉乘、較短步行距離與彈性休息時間，讓小孩與家長都輕鬆。', fit:'親子家庭、嬰幼兒同行', time:'依需求安排', people:'1-8 人', origin:'宜蘭 / 台北 / 機場', dest:'親子景點或飯店', quote:'依實際需求報價', note:'如需兒童安全座椅，請於預約時提前告知。'},
+      {cat:'senior', type:'family yilan', region:'長輩友善包車', badge:'低負擔', name:'長輩友善包車', summary:'以少走路、上下車方便、停靠彈性為原則，協助安排舒適的接送節奏。', fit:'長輩同行、行動較慢旅客', time:'依需求安排', people:'1-8 人', origin:'住家 / 車站 / 飯店', dest:'景點、餐廳或醫療回診接送', quote:'依實際需求報價', note:'輪椅、助行器或特殊上下車需求請先告知。'},
+      {cat:'business', type:'transfer', region:'企業接送', badge:'需先確認', name:'企業與商務接送', summary:'會議、參訪、員工交通或貴賓接送，可依時間與車輛需求提供報價。', fit:'企業、商務、團體接送', time:'依需求安排', people:'1-8 人 / 多車另議', origin:'公司 / 車站 / 機場', dest:'會場、飯店或指定地點', quote:'依實際需求報價', note:'多車或固定接送需求需提前確認車輛。'},
+      {cat:'wedding', type:'transfer', region:'婚禮接送', badge:'需先確認', name:'婚禮與宴客接送', summary:'親友、長輩、賓客接送可依場地與時間協助規劃車輛動線。', fit:'婚禮、宴客、親友接送', time:'依儀式與宴客時間', people:'1-8 人 / 多車另議', origin:'住家 / 飯店 / 車站', dest:'婚宴會館或指定地點', quote:'依實際需求報價', note:'婚禮尖峰日期建議提早確認車輛。'}
     ];
+    routes.forEach(r => { r.image = routeImages[r.cat] || routeImages.yilan; });
     const counts = key => routes.filter(r => key==='all' || r.cat===key || r.type.split(' ').includes(key)).length;
     const filterButton = (key, label, active=false) => '<button class="route-filter '+(active?'active':'')+'" data-count="'+counts(key)+'" onclick="filterRoutes(\''+key+'\',this)">'+label+'</button>';
-    const card = r => '<div class="route-card" data-cat="'+r.cat+'" data-type="'+r.type+'"><div class="route-body"><div class="route-tags"><span class="route-tag tag-region">'+r.region+'</span><span class="route-tag tag-type">'+r.badge+'</span></div><div class="route-name">'+r.name+'</div><div class="route-summary">'+r.summary+'</div><div class="route-spots">'+r.spots+'</div><div class="route-meta"><div class="route-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><span>'+r.time+'</span></div><div class="route-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span>'+r.people+'</span></div></div><div class="route-note">'+r.note+'</div></div></div>';
-    section.innerHTML = '<div class="inner"><div class="routes-header"><div><div class="section-eyebrow reveal"><span class="section-eyebrow-line" style="background:rgba(26,26,26,.3)"></span><span class="section-eyebrow-text" style="color:var(--navy);opacity:.6">Charter Routes</span></div><h2 class="section-title-light reveal reveal-d1">全台熱門包車行程</h2><p class="section-sub-light reveal reveal-d2">先選地區，再看行程種類；第一次規劃也能快速找到適合的玩法。</p></div><a href="#quote" class="btn-primary reveal reveal-d2">索取報價</a></div><div class="routes-intro-grid reveal reveal-d1"><div class="routes-copy"><div><h3>依照旅伴、天氣與停留時間，幫你把路線排得更順。</h3><p>每張卡片都標出適合族群、主要停靠點、時間與貼心提醒。想走經典景點、親子慢遊、美食散策或季節限定，都能一眼比較。</p></div><div class="routes-quick-note"><span>Travel hint</span><strong>不知道怎麼選？先按「親子家庭」或「自然景觀」最快。</strong></div></div><div class="route-help-panel"><div><small>貼心規劃</small><p>LINE 告訴我們人數、日期、想去的地區，我們會回覆順路建議與雨天備案。</p></div><a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="btn-primary">LINE 詢問</a></div></div><div class="routes-layout"><aside class="filter-panel reveal reveal-d1"><div class="filter-heading">快速篩選</div><div class="filter-hint">可依地區或行程種類查看，普通用戶不用先懂路線也能挑。</div><div class="filter-group"><div class="filter-label">地區</div><div class="route-filters">'+filterButton('all','全部路線',true)+filterButton('yilan','宜蘭')+filterButton('hualien','花蓮')+filterButton('north','北部 / 九份')+filterButton('northeast','東北角')+filterButton('taitung','台東')+filterButton('taipei','台北')+filterButton('taichung','台中')+filterButton('tainan','台南')+filterButton('kaohsiung','高雄')+filterButton('airport','機場接送')+'</div></div><div class="filter-group"><div class="filter-label">行程種類</div><div class="route-filters">'+filterButton('family','親子家庭')+filterButton('nature','自然景觀')+filterButton('culture','文化古蹟')+filterButton('food','美食散策')+filterButton('photo','拍照打卡')+filterButton('seasonal','季節限定')+'</div></div></aside><div><div class="routes-grid" id="routes-grid">'+routes.map(card).join('')+'</div><div class="route-empty" id="route-empty">目前沒有符合條件的路線，歡迎 LINE 洽詢客製行程。</div></div></div></div>';
+    const card = r => '<div class="route-card" data-cat="'+r.cat+'" data-type="'+r.type+'"><div class="route-photo" style="background-image:url('+r.image+')"></div><div class="route-body"><div class="route-tags"><span class="route-tag tag-region">'+r.region+'</span><span class="route-tag tag-type">'+r.badge+'</span></div><div class="route-name">'+r.name+'</div><div class="route-summary">'+r.summary+'</div><div class="route-card-details"><div class="route-card-detail"><strong>適合對象</strong>'+r.fit+'</div><div class="route-card-detail"><strong>建議時間</strong>'+r.time+'</div><div class="route-card-detail"><strong>可搭人數</strong>'+r.people+'</div><div class="route-card-detail"><strong>出發地</strong>'+r.origin+'</div><div class="route-card-detail"><strong>目的地</strong>'+r.dest+'</div><div class="route-card-detail"><strong>是否需報價</strong>'+r.quote+'</div></div><div class="route-note">'+r.note+'</div><div class="route-card-actions"><a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn"><svg aria-hidden="true"><use href="#ico-line"></use></svg>立即詢問</a></div></div></div>';
+    section.innerHTML = '<div class="inner"><div class="routes-header"><div><div class="section-eyebrow reveal"><span class="section-eyebrow-line" style="background:rgba(26,26,26,.3)"></span><span class="section-eyebrow-text" style="color:var(--navy);opacity:.6">Charter Routes</span></div><h2 class="section-title-light reveal reveal-d1">包車接送路線參考</h2><p class="section-sub-light reveal reveal-d2">以下為常見包車接送需求與景點參考，不是旅行社套裝行程；實際路線、停留時間與報價以客服確認為準。</p></div><a href="#contact" class="btn-primary reveal reveal-d2">填寫預約</a></div><div class="route-service-note reveal reveal-d1">本服務以包車接送與路線建議為主，實際景點、餐食、門票與行程內容可依旅客需求調整。如需完整套裝旅遊規劃，可另行協助媒合合作旅行社。花蓮、蘇花公路、山區及長途跨縣市路線，實際安排需依當日路況、天候與交通管制調整，建議預約前先與客服確認。</div><div class="routes-layout"><aside class="filter-panel reveal reveal-d1"><div class="filter-heading">快速篩選</div><div class="filter-hint">依服務需求選擇，價格皆需依實際日期、車型、時間與路線確認。</div><div class="filter-group"><div class="filter-label">服務分類</div><div class="route-filters">'+filterButton('all','全部路線',true)+filterButton('popular','熱門路線')+filterButton('airport','機場接送')+filterButton('yilan','宜蘭一日包車')+filterButton('northeast','東北角路線')+filterButton('family','親子包車')+filterButton('senior','長輩友善包車')+filterButton('business','企業接送')+filterButton('wedding','婚禮接送')+filterButton('hualien','花蓮 / 蘇花')+'</div></div></aside><div><div class="routes-grid" id="routes-grid">'+routes.map(card).join('')+'</div><div class="route-empty" id="route-empty">目前沒有符合條件的路線，歡迎 LINE 洽詢客製接送需求。</div></div></div></div>';
   }
   renderRouteExplorer();
+
+  function enhanceMockupLayout(){
+    const assurance = document.getElementById('assurance');
+    const about = document.getElementById('about');
+    if(about && assurance && about.nextElementSibling !== assurance){
+      about.insertAdjacentElement('afterend', assurance);
+    }
+
+    const routesLayout = document.querySelector('#routes .routes-layout');
+    if(routesLayout && !routesLayout.querySelector('.route-side-panels')){
+      const side = document.createElement('aside');
+      side.className = 'route-side-panels';
+      side.innerHTML =
+        '<div class="mock-price-card">' +
+          '<h3>透明收費・安心包車</h3>' +
+          '<p>價格公開透明，實際以客服確認日期、路線、車型後為準</p>' +
+          '<div class="mock-price-row"><div><strong>九人座商務車</strong><span>NT$ 5,000 起 / 日</span></div><img src="assets/generated/vehicle-van-black-v1.png" alt="九人座商務車"></div>' +
+          '<div class="mock-price-row"><div><strong>七人座商務車</strong><span>NT$ 5,500 起 / 日</span></div><img src="assets/generated/vehicle-van-black-v1.png" alt="七人座商務車"></div>' +
+          '<div class="mock-price-row"><div><strong>四人座豪華車</strong><span>NT$ 7,000 起 / 日</span></div><img src="assets/generated/vehicle-van-black-v1.png" alt="四人座豪華車"></div>' +
+          '<a href="#quote" class="price-link">查看完整收費標準 →</a>' +
+        '</div>' +
+        '<div class="mock-booking-card">' +
+          '<h3>預約申請・專人確認</h3>' +
+          '<p>送出後並非立即完成訂車，客服會先確認路線、車型與報價</p>' +
+          '<div class="form-group"><label>姓名</label><input type="text" placeholder="請輸入您的姓名"></div>' +
+          '<div class="form-group"><label>電話</label><input type="tel" placeholder="請輸入聯絡電話"></div>' +
+          '<div class="form-group"><label>出發地點</label><input type="text" placeholder="例如：宜蘭市區、羅東車站"></div>' +
+          '<div class="form-group"><label>預計日期</label><input type="date"></div>' +
+          '<div class="form-group"><label>人數</label><select><option>請選擇人數</option><option>1-2 人</option><option>3-4 人</option><option>5-6 人</option><option>7-8 人</option></select></div>' +
+          '<div class="form-group"><label>聯絡方式偏好</label><select><option>LINE</option><option>電話</option><option>WhatsApp</option><option>WeChat，請於備註留下帳號</option></select></div>' +
+          '<div class="form-group"><label>是否需要外語司機</label><select><option>不需要</option><option>英文</option><option>日文</option><option>其他，請於備註說明</option></select></div>' +
+          '<div class="form-group"><label>備註需求</label><textarea placeholder="請說明特殊需求、希望參觀的景點、嬰兒座椅、長輩同行、行李數量或其他注意事項。"></textarea></div>' +
+          '<button class="btn-primary" onclick="submitForm(this)">送出預約申請</button>' +
+        '</div>';
+      routesLayout.appendChild(side);
+    }
+
+    document.querySelectorAll('.vehicle-img').forEach((box, index) => {
+      if(!box.querySelector('img')){
+        box.innerHTML = '<img src="assets/generated/vehicle-van-black-v1.png" alt="包車車款示意圖" style="width:100%;height:100%;object-fit:cover;">';
+      }
+    });
+
+    if(!document.querySelector('.mobile-bottom-bar')){
+      document.body.insertAdjacentHTML('beforeend',
+        '<div class="mobile-bottom-bar" aria-label="手機快速聯絡">' +
+          '<a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn"><svg aria-hidden="true"><use href="#ico-line"></use></svg>LINE 預約</a>' +
+          '<a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="btn-outline-gold phone">WhatsApp</a>' +
+        '</div>'
+      );
+    }
+  }
+  enhanceMockupLayout();
 
   /* ── Scroll reveal ── */
   const io = new IntersectionObserver(entries=>{
@@ -9306,7 +10097,7 @@
     setTimeout(()=>{ btn.textContent='查看參考報價'; btn.style.cssText=''; }, 4000);
   }
   function submitForm(btn){
-    btn.textContent='✓ 已收到！我們將盡快透過 LINE 與您聯繫';
+    btn.textContent='✓ 已收到！24 小時內聯繫確認，尚未完成訂車';
     btn.style.cssText='background:#2a7a3a;border-color:#2a7a3a;color:#fff;width:100%;margin-top:24px;font-size:15px;letter-spacing:.1em;padding:16px;cursor:default;';
     btn.disabled=true;
   }
@@ -9314,11 +10105,13 @@
   /* ── Active nav link ── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  window.addEventListener('scroll',()=>{
+  function updateActiveNav(){
     let current='';
     sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-100) current=s.id; });
-    navLinks.forEach(a=>{ a.style.color = a.getAttribute('href')==='#'+current ? 'var(--cream)' : ''; });
-  },{passive:true});
+    navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+current));
+  }
+  window.addEventListener('scroll',updateActiveNav,{passive:true});
+  updateActiveNav();
 </script>
 
 
