@@ -8800,6 +8800,7 @@
     .mock-booking-card select option { color:#172133; }
     .mock-booking-card .btn-primary { width:100%; margin-top:4px; }
     .mobile-copy { display:none; }
+    .mobile-booking-flow { display:none; }
 
     /* Unified page surface: softer section transitions, clearer controls */
     #about,
@@ -9042,21 +9043,121 @@
       .nav-actions { display:none; }
     }
     @media(max-width:900px) {
-      body { padding-bottom:64px; }
-      #hero { min-height:680px; height:100svh; background-position:64% center; }
-      .hero-content { min-height:calc(100svh - 64px); justify-content:center; padding:64px 20px 92px; }
-      .hero-brand-text { position:relative; top:auto; left:auto; margin-bottom:12px; font-size:16px; letter-spacing:.1em; }
+      body { padding-bottom:0; }
+      nav#main-nav { height:58px; padding-top:10px; }
+      .hamburger { pointer-events:auto; padding:10px; border-radius:999px; background:rgba(23,56,76,.24); backdrop-filter:blur(14px); }
+      #hero { min-height:0; height:auto; align-items:flex-end; padding-top:58px; background-position:68% center; }
+      #hero::before {
+        background:
+          linear-gradient(180deg,rgba(23,56,76,.15) 0%,rgba(23,56,76,.34) 38%,rgba(23,56,76,.76) 100%),
+          linear-gradient(90deg,rgba(23,56,76,.56) 0%,rgba(23,56,76,.28) 58%,rgba(23,56,76,.08) 100%);
+      }
+      #hero::after { opacity:.55; }
+      .hero-image { object-position:70% center; }
+      .hero-content { min-height:0; justify-content:flex-end; padding:160px 18px 24px; }
+      .hero-brand-text { position:relative; top:auto; left:auto; margin-bottom:10px; font-size:14px; letter-spacing:.08em; }
       .hero-eyebrow { display:none; }
-      .hero-headline { font-size:clamp(34px,9.6vw,40px); line-height:1.16; letter-spacing:0; margin-bottom:14px; max-width:100%; word-break:keep-all; overflow-wrap:normal; }
+      .hero-headline { font-size:clamp(32px,9vw,38px); line-height:1.14; letter-spacing:0; margin-bottom:12px; max-width:100%; word-break:keep-all; overflow-wrap:normal; }
       .hero-headline span { display:block; white-space:nowrap; }
-      .hero-subline { font-size:14px; line-height:1.7; letter-spacing:.03em; margin-bottom:20px; max-width:100%; }
+      .hero-headline span:first-child { color:rgba(247,244,234,.9); }
+      .hero-subline { font-size:14px; line-height:1.65; letter-spacing:.03em; margin-bottom:0; max-width:100%; }
       .desktop-copy { display:none; }
       .mobile-copy { display:inline; }
-      .hero-buttons { display:grid; grid-template-columns:1fr; width:100%; max-width:390px; gap:10px; }
-      .hero-buttons .line-btn,
-      .hero-buttons .btn-primary,
-      .hero-buttons .btn-outline-gold { width:100%; justify-content:center; min-height:48px; font-size:14px; padding:0 18px; }
-      .hero-buttons .line-btn { min-height:54px; font-size:16px; }
+      .hero-buttons { display:none; }
+      .mobile-booking-flow {
+        display:block;
+        width:100%;
+        max-width:430px;
+        margin-top:18px;
+        padding:16px;
+        color:var(--body);
+        background:rgba(247,244,234,.94);
+        border:1px solid rgba(255,255,255,.58);
+        border-radius:8px;
+        box-shadow:0 18px 44px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.72);
+        backdrop-filter:blur(18px);
+      }
+      .mobile-flow-kicker {
+        color:var(--gold);
+        font-size:11px;
+        font-weight:900;
+        letter-spacing:.16em;
+        margin-bottom:4px;
+      }
+      .mobile-flow-title {
+        color:var(--navy);
+        font-family:'Noto Serif TC',serif;
+        font-size:22px;
+        font-weight:900;
+        line-height:1.3;
+        margin-bottom:12px;
+      }
+      .mobile-flow-steps {
+        list-style:none;
+        display:grid;
+        gap:10px;
+        margin:0;
+        padding:0;
+      }
+      .mobile-flow-steps li {
+        display:grid;
+        grid-template-columns:30px minmax(0,1fr);
+        gap:10px;
+        align-items:start;
+        padding-bottom:10px;
+        border-bottom:1px solid rgba(35,81,110,.1);
+      }
+      .mobile-flow-steps li:last-child { padding-bottom:0; border-bottom:0; }
+      .mobile-flow-number {
+        width:30px;
+        height:30px;
+        display:grid;
+        place-items:center;
+        border-radius:50%;
+        background:var(--navy);
+        color:#fff;
+        font-size:13px;
+        font-weight:900;
+      }
+      .mobile-flow-steps strong {
+        display:block;
+        color:var(--navy);
+        font-size:14px;
+        line-height:1.45;
+      }
+      .mobile-flow-steps small {
+        display:block;
+        color:var(--muted);
+        font-size:12px;
+        line-height:1.55;
+        margin-top:2px;
+      }
+      .mobile-flow-actions {
+        display:grid;
+        gap:10px;
+        margin-top:14px;
+      }
+      .mobile-flow-actions .line-btn,
+      .mobile-flow-actions .btn-primary,
+      .mobile-flow-actions .btn-outline-gold {
+        width:100%;
+        min-height:48px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:8px;
+        padding:0 14px;
+        font-size:14px;
+        font-weight:900;
+        letter-spacing:.04em;
+        box-shadow:none;
+      }
+      .mobile-flow-actions .line-btn { min-height:52px; font-size:16px; }
+      .mobile-flow-secondary {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
       .hero-proof { display:none; }
       .hero-proof strong { font-size:15px; }
       #assurance .inner { grid-template-columns:1fr; }
@@ -9072,23 +9173,14 @@
       .route-card-details { grid-template-columns:1fr; }
       .route-side-panels { grid-template-columns:1fr; }
       .contact-actions { grid-template-columns:1fr; }
-      .mobile-bottom-bar {
-        position:fixed;
-        z-index:1200;
-        left:0;
-        right:0;
-        bottom:0;
-        height:64px;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        box-shadow:0 -12px 32px rgba(0,0,0,.18);
-      }
-      .mobile-bottom-bar a { border-radius:0!important; min-height:64px; justify-content:center; }
+      .mobile-bottom-bar { display:none!important; }
       .mobile-bottom-bar .phone { background:var(--gold); color:#fff!important; border-color:var(--gold)!important; }
     }
     @media(max-width:600px) {
-      .hero-content { padding-left:20px; padding-right:20px; padding-bottom:128px; }
-      .hero-headline { font-size:clamp(33px,9.2vw,38px); }
+      .hero-content { padding:142px 16px 22px; }
+      .hero-headline { font-size:clamp(31px,8.8vw,36px); }
+      .mobile-booking-flow { max-width:none; padding:14px; }
+      .mobile-flow-secondary { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -9154,6 +9246,34 @@
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.4A8.4 8.4 0 1 1 21 11.5Z"></path><path d="M8.8 8.7c.2 3 2.2 5.1 5.2 5.8"></path></svg>
         WhatsApp 聯絡
       </a>
+    </div>
+    <div class="mobile-booking-flow" aria-label="手機快速預約流程">
+      <div class="mobile-flow-kicker">快速預約</div>
+      <div class="mobile-flow-title">3 步驟確認包車</div>
+      <ol class="mobile-flow-steps">
+        <li>
+          <span class="mobile-flow-number">1</span>
+          <span><strong>先告訴我們日期與人數</strong><small>也可以只先問路線與預估費用。</small></span>
+        </li>
+        <li>
+          <span class="mobile-flow-number">2</span>
+          <span><strong>提供出發地與目的地</strong><small>宜蘭、機場、車站或全台接送皆可。</small></span>
+        </li>
+        <li>
+          <span class="mobile-flow-number">3</span>
+          <span><strong>客服確認車型與報價</strong><small>確認後才會正式保留車輛。</small></span>
+        </li>
+      </ol>
+      <div class="mobile-flow-actions">
+        <a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn">
+          <svg aria-hidden="true"><use href="#ico-line"></use></svg>
+          LINE 立即詢問
+        </a>
+        <div class="mobile-flow-secondary">
+          <a href="#contact" class="btn-primary">填寫預約</a>
+          <a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="btn-outline-gold">WhatsApp</a>
+        </div>
+      </div>
     </div>
     <div class="hero-proof" aria-label="服務亮點">
       <span><strong>8年+</strong>在地服務經驗</span>
@@ -10047,14 +10167,6 @@
       }
     });
 
-    if(!document.querySelector('.mobile-bottom-bar')){
-      document.body.insertAdjacentHTML('beforeend',
-        '<div class="mobile-bottom-bar" aria-label="手機快速聯絡">' +
-          '<a href="https://line.me/ti/p/@blue-charter" target="_blank" rel="noopener" class="line-btn"><svg aria-hidden="true"><use href="#ico-line"></use></svg>LINE 預約</a>' +
-          '<a href="https://wa.me/886935814087" target="_blank" rel="noopener" class="btn-outline-gold phone">WhatsApp</a>' +
-        '</div>'
-      );
-    }
   }
   enhanceMockupLayout();
 
