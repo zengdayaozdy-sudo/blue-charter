@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>快速詢問｜藍教頭包車旅遊</title>
+    <meta name="description" content="填好包車或機場接送需求，一鍵送到藍教頭官方 LINE。" />
+    <style>
+      :root { color-scheme: dark; --bg:#07111f; --panel:#101d2d; --panel2:#16263a; --line:#06c755; --gold:#d8b45a; --text:#f7fbff; --muted:#b7c4d6; --stroke:rgba(255,255,255,.14); --danger:#ff7070; --ok:#7ee0a1; }
+      * { box-sizing: border-box; }
+      body { margin:0; min-height:100vh; font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif; background:linear-gradient(140deg,#07111f 0%,#10233a 52%,#07111f 100%); color:var(--text); }
+      .wrap { width:min(960px,100%); margin:0 auto; padding:18px; }
+      header { padding:8px 2px 16px; }
+      h1 { margin:0; font-size:24px; line-height:1.25; letter-spacing:0; }
+      .lead { margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.6; }
+      .grid { display:grid; grid-template-columns:1.1fr .9fr; gap:14px; align-items:start; }
+      @media (max-width: 820px) { .grid { grid-template-columns:1fr; } }
+      section, aside { border:1px solid var(--stroke); background:rgba(16,29,45,.9); border-radius:14px; overflow:hidden; box-shadow:0 18px 50px rgba(0,0,0,.24); }
+      .hd { padding:14px 14px 10px; border-bottom:1px solid var(--stroke); }
+      .hd h2 { margin:0; font-size:16px; }
+      .bd { padding:14px; }
+      form { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      @media (max-width: 600px) { form { grid-template-columns:1fr; } }
+      label { display:grid; gap:6px; color:#dfe8f5; font-size:13px; line-height:1.35; }
+      .full { grid-column:1 / -1; }
+      input, select, textarea { width:100%; min-width:0; border:1px solid var(--stroke); border-radius:10px; padding:11px 12px; background:rgba(5,12,24,.74); color:var(--text); font:inherit; outline:none; }
+      textarea { min-height:94px; resize:vertical; }
+      input:focus, select:focus, textarea:focus { border-color:rgba(216,180,90,.75); box-shadow:0 0 0 3px rgba(216,180,90,.12); }
+      .chips { display:flex; gap:8px; flex-wrap:wrap; }
+      .chip { border:1px solid var(--stroke); background:rgba(255,255,255,.05); color:var(--text); padding:9px 11px; border-radius:999px; cursor:pointer; font-size:13px; }
+      .chip[aria-pressed="true"] { background:rgba(6,199,85,.16); border-color:rgba(6,199,85,.58); }
+      .preview { white-space:pre-wrap; word-break:break-word; min-height:240px; border:1px solid var(--stroke); border-radius:12px; background:rgba(5,12,24,.78); padding:12px; color:#eef7ff; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; line-height:1.55; }
+      .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+      .actions { display:grid; gap:10px; margin-top:12px; }
+      button { border:1px solid var(--stroke); border-radius:11px; padding:12px 14px; color:var(--text); background:var(--panel2); font:inherit; font-weight:700; cursor:pointer; }
+      button.primary { background:var(--line); color:#05220f; border-color:rgba(0,0,0,.1); }
+      button.secondary { background:rgba(255,255,255,.06); }
+      button:disabled { opacity:.46; cursor:not-allowed; }
+      .status { margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55; }
+      .status.ok { color:var(--ok); }
+      .status.err { color:var(--danger); }
+      .note { margin-top:12px; color:var(--muted); font-size:12px; line-height:1.55; }
+      .required { color:var(--danger); }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <h1>藍教頭包車旅遊表單系統</h1>
+        <p class="lead">填好需求後按送出，若你是從官方 LINE 內開啟，會直接把整理好的詢問文字送回聊天室。</p>
+      </header>
+
+      <div class="grid">
+        <section>
+          <div class="hd"><h2>填寫需求</h2></div>
+          <div class="bd">
+            <div class="chips" id="serviceChips" aria-label="需求類型"></div>
+            <form id="form" novalidate style="margin-top:14px;">
+              <label>乘車日期 <span class="required">*</span><input name="rideDate" type="date" required /></label>
+              <label>上車時間 <span class="required">*</span><input name="pickupTime" type="time" required /></label>
+              <label class="full">上車地點 <span class="required">*</span><input name="pickupLocation" required placeholder="例：宜蘭火車站／台北市信義區飯店" /></label>
+              <label class="full">下車地點 <span class="required">*</span><input name="dropoffLocation" required placeholder="例：礁溪飯店／桃園機場／活動場館" /></label>
+              <label>乘車人數 <span class="required">*</span><select name="passengers" required><option value="">請選擇</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></label>
+              <label>行李件數<input name="luggage" type="number" min="0" step="1" placeholder="例：2" /></label>
+              <label>是否來回<select name="roundTrip"><option value="">先不確定</option><option value="否">否</option><option value="是">是</option></select></label>
+              <label>回程時間<input name="returnTime" type="time" /></label>
+              <label class="full">其他接送者名單（姓名 / 電話 / 地址）<textarea name="stops" placeholder="例：&#10;王小明 / 09xx-xxx-xxx / 台北市信義區某飯店&#10;李小華 / 09xx-xxx-xxx / 宜蘭火車站"></textarea></label>
+              <label class="full">特殊需求 / 補充說明<textarea name="note" placeholder="例：有長輩、兒童座椅、大件行李、希望行程輕鬆"></textarea></label>
+              <label id="flightNoWrap">航班號碼<input name="flightNo" placeholder="例：BR 123" /></label>
+              <label id="flightTimeWrap">航班時間<input name="flightTime" placeholder="例：14:35 抵達" /></label>
+            </form>
+          </div>
+        </section>
+
+        <aside>
+          <div class="hd"><h2>LINE 訊息預覽</h2></div>
+          <div class="bd">
+            <div class="preview" id="preview"></div>
+            <div class="actions">
+              <button class="primary" id="sendBtn" type="button">送出到 LINE</button>
+              <button class="secondary" id="copyBtn" type="button">複製詢問文字</button>
+            </div>
+            <div id="status" class="status">LIFF 初始化中…</div>
+            <p class="note">如果你不是從官方 LINE 內開啟，系統會改為複製文字；正式使用請從 LINE 官方帳號選單或訊息連結進入。</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      const LIFF_ID = "2010069492-A6ISAqsT";
+      const services = [
+        { id: "charter", label: "包車旅遊" },
+        { id: "airport", label: "機場接送" }
+      ];
+      const state = { serviceType: "charter", liffReady: false, inLine: false };
+      const $ = (selector) => document.querySelector(selector);
+      const form = $("#form");
+      const statusBox = $("#status");
+
+      function setStatus(text, type = "") {
+        statusBox.textContent = text;
+        statusBox.className = `status ${type}`.trim();
+      }
+
+      function renderServices() {
+        const wrap = $("#serviceChips");
+        wrap.innerHTML = "";
+        for (const service of services) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "chip";
+          button.textContent = service.label;
+          button.setAttribute("aria-pressed", String(service.id === state.serviceType));
+          button.addEventListener("click", () => {
+            state.serviceType = service.id;
+            renderServices();
+            updateAirportFields();
+            updatePreview();
+          });
+          wrap.appendChild(button);
+        }
+      }
+
+      function updateAirportFields() {
+        const show = state.serviceType === "airport";
+        $("#flightNoWrap").style.display = show ? "grid" : "none";
+        $("#flightTimeWrap").style.display = show ? "grid" : "none";
+      }
+
+      function readForm() {
+        const fd = new FormData(form);
+        const value = (name) => String(fd.get(name) || "").trim();
+        return {
+          serviceType: services.find((item) => item.id === state.serviceType)?.label || "包車旅遊",
+          rideDate: value("rideDate"),
+          pickupTime: value("pickupTime"),
+          pickupLocation: value("pickupLocation"),
+          dropoffLocation: value("dropoffLocation"),
+          passengers: value("passengers"),
+          luggage: value("luggage"),
+          roundTrip: value("roundTrip"),
+          returnTime: value("returnTime"),
+          stops: value("stops"),
+          note: value("note"),
+          flightNo: value("flightNo"),
+          flightTime: value("flightTime")
+        };
+      }
+
+      function missingFields(data) {
+        const missing = [];
+        if (!data.rideDate) missing.push("乘車日期");
+        if (!data.pickupTime) missing.push("上車時間");
+        if (!data.pickupLocation) missing.push("上車地點");
+        if (!data.dropoffLocation) missing.push("下車地點");
+        if (!data.passengers) missing.push("乘車人數");
+        return missing;
+      }
+
+      function buildMessage(data) {
+        const lines = [
+          "#藍教頭詢問",
+          `#需求類型：${data.serviceType}`,
+          `#日期：${data.rideDate || "未填"}`,
+          `#時間：${data.pickupTime || "未填"}`,
+          `#上車：${data.pickupLocation || "未填"}`,
+          `#下車：${data.dropoffLocation || "未填"}`,
+          `#人數：${data.passengers || "未填"}`,
+          `#行李：${data.luggage || "未填"}`,
+          `#來回：${data.roundTrip || "未填"}${data.returnTime ? `（回程 ${data.returnTime}）` : ""}`
+        ];
+        if (state.serviceType === "airport") {
+          lines.push(`#航班：${data.flightNo || "未填"}${data.flightTime ? ` / ${data.flightTime}` : ""}`);
+        }
+        if (data.stops) lines.push(`\n#其他接送者\n${data.stops}`);
+        if (data.note) lines.push(`\n#特殊需求/補充\n${data.note}`);
+        lines.push("\n請協助確認是否可安排車輛與報價，謝謝。");
+        return lines.join("\n");
+      }
+
+      function updatePreview() {
+        const data = readForm();
+        const missing = missingFields(data);
+        $("#preview").textContent = buildMessage(data);
+        $("#sendBtn").disabled = missing.length > 0;
+        if (missing.length > 0) setStatus(`請先補齊：${missing.join("、")}`, "err");
+        else if (state.liffReady && state.inLine) setStatus("已連上 LINE，可送出。", "ok");
+        else if (state.liffReady) setStatus("已載入 LIFF，但目前不是在 LINE App 內開啟；可先複製文字測試。", "");
+      }
+
+      async function copyMessage() {
+        const text = buildMessage(readForm());
+        try {
+          await navigator.clipboard.writeText(text);
+          setStatus("詢問文字已複製。", "ok");
+        } catch {
+          const box = document.createElement("textarea");
+          box.value = text;
+          document.body.appendChild(box);
+          box.select();
+          document.execCommand("copy");
+          box.remove();
+          setStatus("詢問文字已複製。", "ok");
+        }
+      }
+
+      async function loadLiff() {
+        if (!window.liff) {
+          await new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = "https://static.line-scdn.net/liff/edge/2/sdk.js";
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+        }
+        await window.liff.init({ liffId: LIFF_ID });
+        state.liffReady = true;
+        state.inLine = !!window.liff.isInClient?.();
+        updatePreview();
+      }
+
+      $("#sendBtn").addEventListener("click", async () => {
+        const data = readForm();
+        const missing = missingFields(data);
+        if (missing.length > 0) {
+          setStatus(`請先補齊：${missing.join("、")}`, "err");
+          return;
+        }
+        const text = buildMessage(data);
+        $("#sendBtn").disabled = true;
+        setStatus("送出中…");
+        try {
+          if (!state.liffReady) await loadLiff();
+          if (window.liff?.isInClient?.() && window.liff?.sendMessages) {
+            await window.liff.sendMessages([{ type: "text", text }]);
+            setStatus("已送出到 LINE 聊天室。", "ok");
+          } else {
+            await copyMessage();
+            setStatus("目前不是 LINE App 內開啟，已改為複製詢問文字。", "");
+          }
+        } catch (error) {
+          console.error(error);
+          setStatus("LINE 送出失敗。請確認 LIFF Endpoint URL 是否設定為目前這個 HTTPS 網址。", "err");
+        } finally {
+          updatePreview();
+        }
+      });
+
+      $("#copyBtn").addEventListener("click", copyMessage);
+      form.addEventListener("input", updatePreview);
+      renderServices();
+      updateAirportFields();
+      updatePreview();
+      loadLiff().catch((error) => {
+        console.error(error);
+        state.liffReady = false;
+        setStatus("LIFF 初始化失敗：請確認 LINE Developers 的 Endpoint URL 是 https://blue-charter.vercel.app/quote/line.html", "err");
+      });
+    </script>
+  </body>
+</html>
