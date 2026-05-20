@@ -166,7 +166,7 @@
                 <button class="secondary" id="copyAfterSendBtn" type="button">複製詢問文字</button>
               </div>
             </div>
-            <p class="note">如果你不是從官方 LINE 內開啟，系統會顯示回到 LINE 或複製文字的備援動作。</p>
+            <p class="note">送出成功後會自動回到官方 LINE；若不是從 LINE App 開啟，系統會改用開啟官方帳號或複製文字的備援動作。</p>
           </div>
         </aside>
       </div>
@@ -179,7 +179,7 @@
         { id: "charter", label: "包車旅遊" },
         { id: "airport", label: "機場接送" }
       ];
-      const state = { serviceType: "charter", liffReady: false, inLine: false, lastMessage: "" };
+      const state = { serviceType: "charter", liffReady: false, inLine: false, lastMessage: "", autoReturnTimer: null };
       const $ = (selector) => document.querySelector(selector);
       const form = $("#form");
       const statusBox = $("#status");
@@ -277,6 +277,10 @@
       }
 
       function resetSuccess() {
+        if (state.autoReturnTimer) {
+          window.clearTimeout(state.autoReturnTimer);
+          state.autoReturnTimer = null;
+        }
         $("#successPanel").hidden = true;
         state.lastMessage = "";
       }
@@ -336,6 +340,14 @@
         if (hasLineId()) window.location.href = lineOaUrl(state.lastMessage);
       }
 
+      function queueReturnToLine() {
+        if (state.autoReturnTimer) window.clearTimeout(state.autoReturnTimer);
+        state.autoReturnTimer = window.setTimeout(() => {
+          state.autoReturnTimer = null;
+          openOrCloseLine();
+        }, 450);
+      }
+
       function showSuccess(mode, message) {
         state.lastMessage = message;
         const panel = $("#successPanel");
@@ -346,10 +358,10 @@
         successBtn.textContent = "送出成功";
 
         if (mode === "liff") {
-          successText.textContent = "需求已送到 LINE 對話，客服會接續確認日期、路線與報價。";
+          successText.textContent = "需求已送到 LINE 對話，正在回到官方 LINE。";
           backLineBtn.disabled = false;
         } else if (mode === "deeplink") {
-          successText.textContent = "需求已整理完成，請點回到 LINE，把訊息送到官方帳號。";
+          successText.textContent = "需求已整理完成，正在開啟官方 LINE。";
           backLineBtn.disabled = false;
         } else {
           successText.textContent = "目前無法直接送到 LINE，請先複製訊息後貼到官方帳號。";
@@ -386,9 +398,11 @@
             await window.liff.sendMessages([{ type: "text", text: message }]);
             setStatus("LINE：已送出（LIFF）", "ok");
             showSuccess("liff", message);
+            queueReturnToLine();
           } else if (hasLineId()) {
             setStatus("LINE：已準備開啟", "ok");
             showSuccess("deeplink", message);
+            queueReturnToLine();
           } else {
             await copyText(message);
             setStatus("LINE 未連線，已改為複製詢問文字。", "");
@@ -399,6 +413,7 @@
           if (hasLineId()) {
             setStatus("LIFF 暫時無法初始化，已提供 LINE 備援。", "");
             showSuccess("deeplink", message);
+            queueReturnToLine();
           } else {
             setStatus("LINE 送出失敗，請複製訊息後手動貼上。", "err");
             showSuccess("copy", message);
