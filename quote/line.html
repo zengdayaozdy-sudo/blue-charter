@@ -6,16 +6,40 @@
     <title>快速詢問｜藍教頭包車旅遊</title>
     <meta name="description" content="填好包車或機場接送需求，一鍵送到藍教頭官方 LINE。" />
     <style>
-      :root { color-scheme: dark; --bg:#07111f; --panel:#101d2d; --panel2:#16263a; --line:#06c755; --gold:#d8b45a; --text:#f7fbff; --muted:#b7c4d6; --stroke:rgba(255,255,255,.14); --danger:#ff7070; --ok:#7ee0a1; }
+      :root {
+        color-scheme: dark;
+        --bg:#07111f;
+        --panel:#101d2d;
+        --panel2:#16263a;
+        --line:#06c755;
+        --gold:#d8b45a;
+        --text:#f7fbff;
+        --muted:#b7c4d6;
+        --stroke:rgba(255,255,255,.14);
+        --danger:#ff7070;
+        --ok:#7ee0a1;
+      }
       * { box-sizing: border-box; }
-      body { margin:0; min-height:100vh; font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif; background:linear-gradient(140deg,#07111f 0%,#10233a 52%,#07111f 100%); color:var(--text); }
+      body {
+        margin:0;
+        min-height:100vh;
+        font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+        background:linear-gradient(140deg,#07111f 0%,#10233a 52%,#07111f 100%);
+        color:var(--text);
+      }
       .wrap { width:min(960px,100%); margin:0 auto; padding:18px; }
       header { padding:8px 2px 16px; }
       h1 { margin:0; font-size:24px; line-height:1.25; letter-spacing:0; }
       .lead { margin:8px 0 0; color:var(--muted); font-size:14px; line-height:1.6; }
       .grid { display:grid; grid-template-columns:1.1fr .9fr; gap:14px; align-items:start; }
       @media (max-width: 820px) { .grid { grid-template-columns:1fr; } }
-      section, aside { border:1px solid var(--stroke); background:rgba(16,29,45,.9); border-radius:14px; overflow:hidden; box-shadow:0 18px 50px rgba(0,0,0,.24); }
+      section, aside {
+        border:1px solid var(--stroke);
+        background:rgba(16,29,45,.9);
+        border-radius:14px;
+        overflow:hidden;
+        box-shadow:0 18px 50px rgba(0,0,0,.24);
+      }
       .hd { padding:14px 14px 10px; border-bottom:1px solid var(--stroke); }
       .hd h2 { margin:0; font-size:16px; }
       .bd { padding:14px; }
@@ -23,24 +47,77 @@
       @media (max-width: 600px) { form { grid-template-columns:1fr; } }
       label { display:grid; gap:6px; color:#dfe8f5; font-size:13px; line-height:1.35; }
       .full { grid-column:1 / -1; }
-      input, select, textarea { width:100%; min-width:0; border:1px solid var(--stroke); border-radius:10px; padding:11px 12px; background:rgba(5,12,24,.74); color:var(--text); font:inherit; outline:none; }
+      input, select, textarea {
+        width:100%;
+        min-width:0;
+        border:1px solid var(--stroke);
+        border-radius:10px;
+        padding:11px 12px;
+        background:rgba(5,12,24,.74);
+        color:var(--text);
+        font:inherit;
+        outline:none;
+      }
       textarea { min-height:94px; resize:vertical; }
-      input:focus, select:focus, textarea:focus { border-color:rgba(216,180,90,.75); box-shadow:0 0 0 3px rgba(216,180,90,.12); }
+      input:focus, select:focus, textarea:focus {
+        border-color:rgba(216,180,90,.75);
+        box-shadow:0 0 0 3px rgba(216,180,90,.12);
+      }
       .chips { display:flex; gap:8px; flex-wrap:wrap; }
-      .chip { border:1px solid var(--stroke); background:rgba(255,255,255,.05); color:var(--text); padding:9px 11px; border-radius:999px; cursor:pointer; font-size:13px; }
+      .chip {
+        border:1px solid var(--stroke);
+        background:rgba(255,255,255,.05);
+        color:var(--text);
+        padding:9px 11px;
+        border-radius:999px;
+        cursor:pointer;
+        font-size:13px;
+      }
       .chip[aria-pressed="true"] { background:rgba(6,199,85,.16); border-color:rgba(6,199,85,.58); }
-      .preview { white-space:pre-wrap; word-break:break-word; min-height:240px; border:1px solid var(--stroke); border-radius:12px; background:rgba(5,12,24,.78); padding:12px; color:#eef7ff; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; line-height:1.55; }
-      .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+      .preview {
+        white-space:pre-wrap;
+        word-break:break-word;
+        min-height:240px;
+        border:1px solid var(--stroke);
+        border-radius:12px;
+        background:rgba(5,12,24,.78);
+        padding:12px;
+        color:#eef7ff;
+        font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+        font-size:13px;
+        line-height:1.55;
+      }
       .actions { display:grid; gap:10px; margin-top:12px; }
-      button { border:1px solid var(--stroke); border-radius:11px; padding:12px 14px; color:var(--text); background:var(--panel2); font:inherit; font-weight:700; cursor:pointer; }
+      button {
+        border:1px solid var(--stroke);
+        border-radius:11px;
+        padding:12px 14px;
+        color:var(--text);
+        background:var(--panel2);
+        font:inherit;
+        font-weight:700;
+        cursor:pointer;
+      }
       button.primary { background:var(--line); color:#05220f; border-color:rgba(0,0,0,.1); }
       button.secondary { background:rgba(255,255,255,.06); }
+      button.success { background:rgba(126,224,161,.18); color:#e9fff1; border-color:rgba(126,224,161,.55); }
       button:disabled { opacity:.46; cursor:not-allowed; }
       .status { margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55; }
       .status.ok { color:var(--ok); }
       .status.err { color:var(--danger); }
       .note { margin-top:12px; color:var(--muted); font-size:12px; line-height:1.55; }
       .required { color:var(--danger); }
+      .success-panel[hidden] { display:none; }
+      .success-panel {
+        margin-top:12px;
+        padding:12px;
+        border:1px solid rgba(126,224,161,.34);
+        border-radius:12px;
+        background:rgba(126,224,161,.09);
+      }
+      .success-copy { margin:10px 0 0; color:#dfffea; font-size:13px; line-height:1.55; }
+      .success-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+      @media (max-width: 520px) { .success-actions { grid-template-columns:1fr; } }
     </style>
   </head>
   <body>
@@ -81,7 +158,15 @@
               <button class="secondary" id="copyBtn" type="button">複製詢問文字</button>
             </div>
             <div id="status" class="status">LIFF 初始化中…</div>
-            <p class="note">如果你不是從官方 LINE 內開啟，系統會改為複製文字；正式使用請從 LINE 官方帳號選單或訊息連結進入。</p>
+            <div id="successPanel" class="success-panel" role="status" aria-live="polite" hidden>
+              <button class="success" id="successBtn" type="button">送出成功</button>
+              <p class="success-copy" id="successText">需求已送出，客服會接續確認。</p>
+              <div class="success-actions">
+                <button class="primary" id="backLineBtn" type="button">回到 LINE</button>
+                <button class="secondary" id="copyAfterSendBtn" type="button">複製詢問文字</button>
+              </div>
+            </div>
+            <p class="note">如果你不是從官方 LINE 內開啟，系統會顯示回到 LINE 或複製文字的備援動作。</p>
           </div>
         </aside>
       </div>
@@ -89,11 +174,12 @@
 
     <script>
       const LIFF_ID = "2010069492-A6ISAqsT";
+      const LINE_OA_LINE_ID = "@blue-charter";
       const services = [
         { id: "charter", label: "包車旅遊" },
         { id: "airport", label: "機場接送" }
       ];
-      const state = { serviceType: "charter", liffReady: false, inLine: false };
+      const state = { serviceType: "charter", liffReady: false, inLine: false, lastMessage: "" };
       const $ = (selector) => document.querySelector(selector);
       const form = $("#form");
       const statusBox = $("#status");
@@ -114,6 +200,7 @@
           button.setAttribute("aria-pressed", String(service.id === state.serviceType));
           button.addEventListener("click", () => {
             state.serviceType = service.id;
+            resetSuccess();
             renderServices();
             updateAirportFields();
             updatePreview();
@@ -186,26 +273,46 @@
         $("#sendBtn").disabled = missing.length > 0;
         if (missing.length > 0) setStatus(`請先補齊：${missing.join("、")}`, "err");
         else if (state.liffReady && state.inLine) setStatus("已連上 LINE，可送出。", "ok");
-        else if (state.liffReady) setStatus("已載入 LIFF，但目前不是在 LINE App 內開啟；可先複製文字測試。", "");
+        else if (state.liffReady) setStatus("已載入 LIFF，目前不是在 LINE App 內開啟。", "");
       }
 
-      async function copyMessage() {
-        const text = buildMessage(readForm());
+      function resetSuccess() {
+        $("#successPanel").hidden = true;
+        state.lastMessage = "";
+      }
+
+      async function copyText(text) {
         try {
           await navigator.clipboard.writeText(text);
-          setStatus("詢問文字已複製。", "ok");
+          return true;
         } catch {
           const box = document.createElement("textarea");
           box.value = text;
+          box.style.position = "fixed";
+          box.style.left = "-9999px";
           document.body.appendChild(box);
+          box.focus();
           box.select();
-          document.execCommand("copy");
+          const ok = document.execCommand("copy");
           box.remove();
-          setStatus("詢問文字已複製。", "ok");
+          return ok;
         }
       }
 
-      async function loadLiff() {
+      async function copyMessage() {
+        const ok = await copyText(buildMessage(readForm()));
+        setStatus(ok ? "詢問文字已複製。" : "複製失敗，請手動選取訊息。", ok ? "ok" : "err");
+      }
+
+      function hasLineId() {
+        return LINE_OA_LINE_ID && LINE_OA_LINE_ID.startsWith("@");
+      }
+
+      function lineOaUrl(message) {
+        return `https://line.me/R/oaMessage/${encodeURIComponent(LINE_OA_LINE_ID)}/?${encodeURIComponent(message)}`;
+      }
+
+      async function ensureLiff() {
         if (!window.liff) {
           await new Promise((resolve, reject) => {
             const script = document.createElement("script");
@@ -219,45 +326,100 @@
         await window.liff.init({ liffId: LIFF_ID });
         state.liffReady = true;
         state.inLine = !!window.liff.isInClient?.();
-        updatePreview();
+      }
+
+      function openOrCloseLine() {
+        if (state.inLine && window.liff?.closeWindow) {
+          window.liff.closeWindow();
+          return;
+        }
+        if (hasLineId()) window.location.href = lineOaUrl(state.lastMessage);
+      }
+
+      function showSuccess(mode, message) {
+        state.lastMessage = message;
+        const panel = $("#successPanel");
+        const successBtn = $("#successBtn");
+        const successText = $("#successText");
+        const backLineBtn = $("#backLineBtn");
+        panel.hidden = false;
+        successBtn.textContent = "送出成功";
+
+        if (mode === "liff") {
+          successText.textContent = "需求已送到 LINE 對話，客服會接續確認日期、路線與報價。";
+          backLineBtn.disabled = false;
+        } else if (mode === "deeplink") {
+          successText.textContent = "需求已整理完成，請點回到 LINE，把訊息送到官方帳號。";
+          backLineBtn.disabled = false;
+        } else {
+          successText.textContent = "目前無法直接送到 LINE，請先複製訊息後貼到官方帳號。";
+          backLineBtn.disabled = true;
+        }
+
+        successBtn.onclick = openOrCloseLine;
+        backLineBtn.onclick = openOrCloseLine;
+        $("#copyAfterSendBtn").onclick = async () => {
+          const ok = await copyText(state.lastMessage);
+          $("#copyAfterSendBtn").textContent = ok ? "已複製" : "複製失敗";
+          window.setTimeout(() => { $("#copyAfterSendBtn").textContent = "複製詢問文字"; }, 1600);
+        };
+        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
 
       $("#sendBtn").addEventListener("click", async () => {
+        resetSuccess();
         const data = readForm();
         const missing = missingFields(data);
         if (missing.length > 0) {
           setStatus(`請先補齊：${missing.join("、")}`, "err");
           return;
         }
-        const text = buildMessage(data);
+
+        const message = buildMessage(data);
         $("#sendBtn").disabled = true;
+        $("#sendBtn").setAttribute("aria-busy", "true");
         setStatus("送出中…");
+
         try {
-          if (!state.liffReady) await loadLiff();
+          await ensureLiff();
           if (window.liff?.isInClient?.() && window.liff?.sendMessages) {
-            await window.liff.sendMessages([{ type: "text", text }]);
-            setStatus("已送出到 LINE 聊天室。", "ok");
+            await window.liff.sendMessages([{ type: "text", text: message }]);
+            setStatus("LINE：已送出（LIFF）", "ok");
+            showSuccess("liff", message);
+          } else if (hasLineId()) {
+            setStatus("LINE：已準備開啟", "ok");
+            showSuccess("deeplink", message);
           } else {
-            await copyMessage();
-            setStatus("目前不是 LINE App 內開啟，已改為複製詢問文字。", "");
+            await copyText(message);
+            setStatus("LINE 未連線，已改為複製詢問文字。", "");
+            showSuccess("copy", message);
           }
         } catch (error) {
           console.error(error);
-          setStatus("LINE 送出失敗。請確認 LIFF Endpoint URL 是否設定為目前這個 HTTPS 網址。", "err");
+          if (hasLineId()) {
+            setStatus("LIFF 暫時無法初始化，已提供 LINE 備援。", "");
+            showSuccess("deeplink", message);
+          } else {
+            setStatus("LINE 送出失敗，請複製訊息後手動貼上。", "err");
+            showSuccess("copy", message);
+          }
         } finally {
-          updatePreview();
+          $("#sendBtn").disabled = false;
+          $("#sendBtn").removeAttribute("aria-busy");
         }
       });
 
       $("#copyBtn").addEventListener("click", copyMessage);
-      form.addEventListener("input", updatePreview);
+      form.addEventListener("input", () => {
+        resetSuccess();
+        updatePreview();
+      });
       renderServices();
       updateAirportFields();
       updatePreview();
-      loadLiff().catch((error) => {
-        console.error(error);
+      ensureLiff().then(updatePreview).catch(() => {
         state.liffReady = false;
-        setStatus("LIFF 初始化失敗：請確認 LINE Developers 的 Endpoint URL 是 https://blue-charter.vercel.app/quote/line.html", "err");
+        setStatus("LIFF 尚未連線；仍可送出後用 LINE 備援。", "");
       });
     </script>
   </body>
